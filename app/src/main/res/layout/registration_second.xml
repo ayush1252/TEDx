@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:layout_marginTop="20dp"
+    android:weightSum="1">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:id="@+id/Gender"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:id="@+id/male"
+                    android:text="Male"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:id="@+id/female"
+                    android:text="Female"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:id="@+id/others"
+                    android:text="Other"/>
+
+            </RadioGroup>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Adress"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_envelope"
+                android:id="@+id/Adress"
+                android:layout_below="@+id/Gender"
+                android:drawablePadding="10dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/Adress"
+                android:id="@+id/Spinnerla"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:id="@+id/locality"
+                    android:hint="Locality"
+                    android:drawableLeft="@drawable/ic_envelope"
+                    android:drawablePadding="10dp"/>
+
+                <Spinner
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:prompt="@string/country"
+                    android:id="@+id/spinner" />
+
+            </LinearLayout>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="How did you come to know of TEDxDTU 2017?"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_envelope"
+                android:id="@+id/Know"
+                android:layout_below="@+id/Spinnerla"
+                android:drawablePadding="10dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Why do you want to attend TEDxDTU 2017?"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_envelope"
+                android:id="@+id/Attend"
+                android:layout_below="@+id/Know"
+                android:drawablePadding="10dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="What Ideas according to you are worth spreadin?"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_envelope"
+                android:id="@+id/Ideas"
+                android:layout_below="@+id/Attend"
+                android:drawablePadding="10dp"/>
+            <android.support.design.widget.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_user"
+                android:layout_below="@+id/Ideas"
+                android:background="@color/colorAccent"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_weight="0.25" />
+        </RelativeLayout>
+    </ScrollView>
+
+
+
+
+
+</RelativeLayout>

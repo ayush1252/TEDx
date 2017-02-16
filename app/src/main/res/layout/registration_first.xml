@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    android:layout_marginTop="20dp"
+    android:weightSum="1">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="First Name"
+        android:id="@+id/Fname"
+        android:drawableLeft="@drawable/ic_user"
+        android:drawablePadding="10dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Last Name"
+        android:layout_marginTop="20dp"
+        android:drawableLeft="@drawable/ic_user"
+        android:id="@+id/Lname"
+        android:layout_below="@+id/Fname"
+        android:drawablePadding="10dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:layout_below="@+id/Lname"
+
+        android:layout_marginTop="20dp"
+        android:id="@+id/Email"
+        android:inputType="textEmailAddress"
+        android:drawableLeft="@drawable/ic_envelope"
+        android:drawablePadding="10dp"/>
+
+    <android.support.v7.widget.AppCompatEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Phone"
+        android:layout_below="@+id/Email"
+
+        android:id="@+id/Phone"
+        android:inputType="phone"
+        android:layout_marginTop="20dp"
+        android:drawableLeft="@drawable/ic_envelope"
+        android:drawablePadding="10dp"/>
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Institution/Place of work"
+        android:id="@+id/Work"
+        android:inputType="text"
+        android:layout_marginTop="20dp"
+
+        android:layout_below="@+id/Phone"
+        android:drawableLeft="@drawable/ic_envelope"
+        android:drawablePadding="10dp"/>
+
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/DOB"
+        android:layout_marginTop="20dp"
+        android:drawableLeft="@drawable/ic_envelope"
+        android:layout_below="@id/Work"
+        android:hint="DOB"
+        android:drawablePadding="10dp" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_user"
+            android:background="@color/colorAccent"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/DOB"
+            android:layout_alignParentEnd="true"
+            android:layout_weight="0.25" />
+
+
+    </RelativeLayout>
+</ScrollView>
+
+
+
+
+</RelativeLayout>

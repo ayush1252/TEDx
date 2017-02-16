@@ -49,6 +49,8 @@ public class SpeakerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.speaker_activity);
 
+
+
         //ViewPager viewPager  = (ViewPager) findViewById(R.id.materialup_viewpager);
         AppBarLayout appbarLayout = (AppBarLayout) findViewById(R.id.materialup_appbar);
         mProfileImage = (ImageView) findViewById(R.id.materialup_profile_image);

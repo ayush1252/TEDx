@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
+import android.widget.Toast;
 
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
@@ -16,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Toast.makeText(this,SignInActivity.str.get(0), Toast.LENGTH_SHORT).show();
 
         AHBottomNavigation bottomNavigation = (AHBottomNavigation) findViewById(R.id.bottom_navigation);
         AHBottomNavigationItem item1 = new AHBottomNavigationItem("Favourite", R.drawable.ic_favorite_white_24dp, R.color.colorAccent);
@@ -31,27 +33,24 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigation.addItem(item5);
 
         bottomNavigation.setDefaultBackgroundColor(getResources().getColor(R.color.colorPrimary));
-        bottomNavigation.setAccentColor(Color.parseColor("#F63D2B"));
-        bottomNavigation.setInactiveColor(Color.parseColor("#747474"));
+        bottomNavigation.setAccentColor(getResources().getColor(R.color.colorAccent));
+        bottomNavigation.setInactiveColor(getResources().getColor(R.color.colorBottomNavigationActiveColored));
 
         bottomNavigation.setForceTint(true);
         bottomNavigation.setTitleState(AHBottomNavigation.TitleState.SHOW_WHEN_ACTIVE);
         bottomNavigation.setCurrentItem(2);
-        bottomNavigation.setTranslucentNavigationEnabled(true);
         bottomNavigation.setColored(true);
 
       bottomNavigation.setOnTabSelectedListener(new AHBottomNavigation.OnTabSelectedListener() {
           @Override
           public boolean onTabSelected(int position, boolean wasSelected) {
 
-              Intent intent=new Intent(getApplicationContext(),SpeakerActivity.class);
+              Intent intent=new Intent(getApplicationContext(),RegistrationActivity.class);
               startActivity(intent);
               return true;
           }
       });
 
     }
-    public static void start(Context c) {
-        c.startActivity(new Intent(c, SpeakerActivity.class));
-    }
+
 }

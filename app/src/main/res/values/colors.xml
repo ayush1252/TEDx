@@ -3,4 +3,8 @@
     <color name="colorPrimary">#df104a</color>
     <color name="colorPrimaryDark">#fc8e0308</color>
     <color name="colorAccent">#050226</color>
+    <color name="randomcolor">#f5e5e6</color>
+    <color name="windowBackground">#FFFFFF</color>
+    <color name="navigationBarColor">#000000</color>
+    <color name="colorAccent1">#c8e8ff</color>
 </resources>

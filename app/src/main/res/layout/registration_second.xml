@@ -5,7 +5,7 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingTop="16dp"
     android:layout_marginTop="20dp"
     android:weightSum="1">
 
@@ -17,11 +17,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+
             <RadioGroup
                 android:layout_width="match_parent"
                 android:orientation="horizontal"
                 android:id="@+id/Gender"
+                android:layout_marginLeft="10dp"
                 android:layout_height="wrap_content">
+
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -52,11 +55,21 @@
                 android:id="@+id/Adress"
                 android:layout_below="@+id/Gender"
                 android:drawablePadding="10dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Adress"
+                android:hint="Loacality"
+                android:id="@+id/locality"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_envelope"
+                android:drawablePadding="10dp"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:layout_below="@+id/Adress"
+                android:layout_below="@+id/locality"
                 android:id="@+id/Spinnerla"
                 android:orientation="horizontal">
 
@@ -64,8 +77,8 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/locality"
-                    android:hint="Locality"
+                    android:id="@+id/city"
+                    android:hint="City"
                     android:drawableLeft="@drawable/ic_envelope"
                     android:drawablePadding="10dp"/>
 
@@ -77,6 +90,7 @@
                     android:id="@+id/spinner" />
 
             </LinearLayout>
+
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -109,6 +123,7 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_user"
                 android:layout_below="@+id/Ideas"
+                android:id="@+id/finish"
                 android:background="@color/colorAccent"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentEnd="true"

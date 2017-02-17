@@ -18,7 +18,7 @@ import java.util.List;
 
 public class RegistrationActivity extends AppCompatActivity {
     private TabLayout tabLayout;
-    private CustomViewPager viewPager;
+    public static CustomViewPager viewPager;
 public static RegistrationForm registrationform;
 
     @Override
@@ -35,6 +35,30 @@ public static RegistrationForm registrationform;
 
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
+        tabLayout.clearOnTabSelectedListeners();
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                if(tab.getPosition()==0)
+                    viewPager.setCurrentItem(0);
+                else
+                    try {
+                        TabFragment.next.callOnClick();
+                    } catch (Exception e) {
+                        viewPager.setCurrentItem(1);
+                    }
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+                return;
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+                return;
+            }
+        });
 
     }
 
@@ -45,7 +69,7 @@ public static RegistrationForm registrationform;
         adapter.addFragment(new Tab2Fragment(), "Questionaire");
         viewPager.setAdapter(adapter);
         viewPager.setPagingEnabled(false);
-        
+
     }
 
     @Override

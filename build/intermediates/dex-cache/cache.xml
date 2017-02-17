@@ -12,33 +12,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="53a420cd4f49274db6bd43475f8006ba67ef6bbd">
-        <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.0.0_12858461c7b5eafd82d9ee356a0f0953a9955c9a/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="4ccbcda5c72027c7f7c14be9ff8640d9cb0d8da0">
-        <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.0.0_c0298b6bfefc47aab8a3ee6c717571831eda68f8/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/exploded-aar/com.android.support/transition/25.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="0c6d948e6cb9ea6f535d175fb61ba2930719c0e9">
-        <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-transition-25.0.0_179b338d628193c7a50f1ca28aa4b362dc7fc0fb/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/10.2.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -48,30 +21,39 @@
     </item>
     <item
         is-multidex="true"
-        jar="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/exploded-aar/com.android.support/design/25.0.0/jars/classes.jar"
+        jar="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="26384be22ddc74cfe197ebda9edbc7d1fd8bd537">
-        <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-25.0.0_e14e3057fc314230f03eef7dc8c63dc80d11af48/classes.dex" />
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.1.0_abf8fc2e66ffea0338c1551d1b49d3926917aac5/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jar="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/exploded-aar/com.android.support/support-v13/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
-        <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_57159c38315f9749692431956d64590e2d43adb0/classes.dex" />
+        sha1="e006c9b6f0aaed9d8c7934b74039738390fe3468">
+        <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v13-25.1.0_8afa739f1233f803edb543caa87408b65f95af75/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/ayush/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/25.0.0/support-annotations-25.0.0.jar"
+        jar="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="a22d2cc94da87b254451fa8ed28afc30b4653773">
-        <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.0.0_1a6bbe50360e21ec4cd8d549a28f8dd6bdb165d1/classes.dex" />
+        sha1="6fb6ac3e8d3b9013819920d9ea11f3803c4c0033">
+        <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.1.0_4d5f30e6a22ce0e89743bf99ebf5478d10150f7e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="e79aa3d9a16f8c9f16377c0608de70a8f31e5d80">
+        <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.1.0_2b52b64620c71ee0ebb2d236fc8c245bcbbcfb88/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -81,15 +63,6 @@
         revision="24.0.2"
         sha1="ce9112e08a027c8620ae693983e38cdbb9f6371b">
         <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-impl-10.2.0_d1b1e9e09c79a5f442b93b387fe6f9affeaa23c3/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/libs/internal_impl-25.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="ee5faf4dee5b6a4364bf51587871047dde7c703a">
-        <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_9b24bac2bb6e51eac792c06b5abd340410b7bd5a/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -115,26 +88,26 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="a02312d47bee54f523979dda66cf27bf8976342d">
+        sha1="7e9c73753517fb545fb0c12e9a55bdb1b4d96451">
         <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_d5810522cd93e3f4201cb6328ae199ceabdc8b27/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/classes.jar"
+        jar="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/exploded-aar/com.wdullaer/materialdatetimepicker/3.1.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="75b1f366ff0bbc78f8b1f7cf0dc82e7c53afef6a">
-        <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.0.0_3e088e06f018d6ae40f95c95a475e3887425969e/classes.dex" />
+        sha1="4c4a01dcbfd277f63d15cb5e25f8bbab377adde9">
+        <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.wdullaer-materialdatetimepicker-3.1.1_7046680fcf20c36a4378f8cf85565795b51759d4/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.0.0/jars/classes.jar"
+        jar="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/exploded-aar/com.android.support/transition/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="5e497d60f0cb6ce87c458ac5420a46d0fed49bd0">
-        <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-25.0.0_c9ef03abbec0326dc3386e0aa1ed19b4565561e2/classes.dex" />
+        sha1="d38084015027549951cbaea5d5f6fb795cc81151">
+        <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-transition-25.1.0_bddb8f049d7a47ad4982eae954318246ddcd966f/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -147,12 +120,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jar="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="f2e3b9bc1ec25f652e8007ce7774c991e38f6a00">
-        <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_b09cd4a99f5ba549449e347f5f756fd4dfe177c7/classes.dex" />
+        sha1="1630658fbc2d222b988603c27b4a4249586fbfe7">
+        <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.1.0_aa245ee2d4fb01f16c302865ff2479d127631c88/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -165,11 +138,20 @@
     </item>
     <item
         is-multidex="true"
+        jar="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="ca3c7aa31e2726a400a6e552b93cb9f63c9a1e6d">
+        <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.1.0_f3fef288a69b89fe3559a52f3f01599474bd1b69/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="c76ff6b5312e46bc1b0dd5d1f1a77f33064b6ed4">
+        sha1="0e45f1a1338cf66c13b87d04190058926406d28e">
         <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_0a0f320055633b4defe816f68f652e62ed7765fd/classes.dex" />
     </item>
     <item
@@ -180,6 +162,15 @@
         revision="24.0.2"
         sha1="3d13e510077b35fe8e49930a627dd849ad5da0dc">
         <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-10.2.0_a1cb6daf3276f670f886fb6dad1addfecf15f507/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="0a0ef86b7fa568a52bf6214a0326ca1f1d618da7">
+        <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.1.0_ae6e6339f735d5ea3abc3263df62dcf2ce6d1ce0/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -201,57 +192,30 @@
     </item>
     <item
         is-multidex="true"
-        jar="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jar="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="3b61a70884adaf0be3fc06c70c801e3e6df13133">
-        <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_2014faba8582f24298a2d88ee098af44573086bd/classes.dex" />
+        sha1="f02263e35e52668dd17b73bf961437e3d562b35f">
+        <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.1.0_495bed1710af404dbca97ca1df6a54b61be1017f/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/jars/classes.jar"
+        jar="/home/ayush/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/25.1.0/support-annotations-25.1.0.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="8bc45ce1f63d1a391fd38b32a201be5a42f9c95d">
-        <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.0.0_2836a3d779e2f993c5746025add91e9561bf0c86/classes.dex" />
+        sha1="64cb6b229a8bdfd907bc8dd46839a0053e4c018d">
+        <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.1.0_5714f70bf11cde8a443eeb834298ce616f1a622c/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.0/jars/classes.jar"
+        jar="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.0.0_7c67c8d25770280792df8ff6f7d4c41b406e2d5a/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="76fb65a4b41ea42dab8a1310ed772a2420c96b52">
-        <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.0.0_0c0e3127501b979e036afa2d9f4a43a33acd13f1/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="d29714cc76b38157e3cbd034c66e1ec808eb4c19">
-        <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.0.0_939aa8cd8c65926ba783e88cc72fc4685a025916/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="665d21a8a069c96b4d9e8b434f5096d865b4e261">
-        <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_bd17d695f2900018cebfe318d6d028e3bcb8139a/classes.dex" />
+        sha1="2a53c4f3518116b8c6aee0e477233f0f7da8616f">
+        <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.1.0_f66bfe673c5369b9b4ed042b7766e9e639c98628/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -273,12 +237,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/classes.jar"
+        jar="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="26674000177e45447a0326a6ad84612761199a13">
-        <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.0.0_89651fa47dba205a9740b2da26a42482c52c2d44/classes.dex" />
+        sha1="aee64634871d88a419d59eb743c1258a60f19700">
+        <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.1.0_4992990a2231945dab192c6edbdb16d8893dea41/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -309,6 +273,15 @@
     </item>
     <item
         is-multidex="true"
+        jar="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="b266c8faa5af72e579b9da36ef35053ffed6ac64">
+        <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-25.1.0_00b3580b4810c3cf55165d2c54295ec77f754a34/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/10.2.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -336,12 +309,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/classes.jar"
+        jar="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/exploded-aar/com.android.support/design/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="07daa0b6e1d455c82a38422ffe287c18823d339a">
-        <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.0.0_64062692b3978602c0c3e8bfcc49d425910b99c2/classes.dex" />
+        sha1="30103d98fa5ed824b54af839c85e2111f9bde8ec">
+        <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-25.1.0_5c449e35c0f3d60b738e1cb5537e14ee5209e35b/classes.dex" />
     </item>
 
 </items>

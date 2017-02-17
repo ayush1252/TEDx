@@ -29,7 +29,7 @@
             app:tabSelectedTextColor="@color/randomcolor"
             app:tabGravity="fill"/>
 </android.support.design.widget.AppBarLayout>
-    <android.support.v4.view.ViewPager
+<com.example.ayush.bottomnavigation.CustomViewPager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

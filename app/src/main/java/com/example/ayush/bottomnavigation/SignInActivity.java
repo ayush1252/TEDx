@@ -1,6 +1,7 @@
 package com.example.ayush.bottomnavigation;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,6 +22,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +40,12 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_sign_in);
 
         mAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if(user!=null)
+        {
+            Intent i=new Intent(SignInActivity.this,MainActivity.class);
+            startActivity(i);
+        }
         str.add("This Works");
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -94,6 +102,16 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
     private void firebaseAuthWithGoogle(GoogleSignInAccount acct){
         Log.d("lalala","Sucess");
         Toast.makeText(this, acct.getEmail()+acct.getDisplayName(), Toast.LENGTH_SHORT).show();
+        SharedPreferences sharedPreferences=getSharedPreferences("Login",MODE_PRIVATE);
+        SharedPreferences.Editor editor=sharedPreferences.edit();
+        if(sharedPreferences.getInt("log",0)==0)
+        {
+            FirebaseMessaging.getInstance().subscribeToTopic("Unregistered");
+            Toast.makeText(this, "Subscribed", Toast.LENGTH_SHORT).show();
+        }
+        editor.putInt("log",1);
+        editor.commit();
+
         Intent i=new Intent(SignInActivity.this,MainActivity.class);
         startActivity(i);
         AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);

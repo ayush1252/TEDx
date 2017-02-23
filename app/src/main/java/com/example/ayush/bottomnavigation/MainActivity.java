@@ -9,13 +9,44 @@ import android.widget.Toast;
 
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
+import com.daimajia.slider.library.Animations.DescriptionAnimation;
+import com.daimajia.slider.library.SliderLayout;
+import com.daimajia.slider.library.SliderTypes.DefaultSliderView;
+import com.daimajia.slider.library.Tricks.ViewPagerEx;
 
 public class MainActivity extends AppCompatActivity {
-
+    SliderLayout mDemoSlider;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mDemoSlider = (SliderLayout)findViewById(R.id.slider);
+        DefaultSliderView defaultSliderView=new DefaultSliderView(this);
+        defaultSliderView.image(R.drawable.bebe);
+        mDemoSlider.addSlider(defaultSliderView);
+        mDemoSlider.addSlider(defaultSliderView);
+        mDemoSlider.addSlider(defaultSliderView);
+        mDemoSlider.setPresetTransformer(SliderLayout.Transformer.Accordion);
+        //mDemoSlider.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);
+        mDemoSlider.setCustomAnimation(new DescriptionAnimation());
+        mDemoSlider.setDuration(4000);
+        mDemoSlider.addOnPageChangeListener(new ViewPagerEx.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
 
         Toast.makeText(this,SignInActivity.str.get(0), Toast.LENGTH_SHORT).show();
 

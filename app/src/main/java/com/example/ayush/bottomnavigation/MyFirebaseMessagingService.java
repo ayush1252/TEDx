@@ -122,6 +122,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                     .setSmallIcon(R.mipmap.ic_launcher)
                     .setLargeIcon(result)
                     .setSound(defaultSoundUri)
+                    .setPriority(Notification.PRIORITY_MAX)
                     .setStyle(new Notification.BigPictureStyle().bigPicture(result))
                     .build();
             notif.flags |= Notification.FLAG_AUTO_CANCEL;

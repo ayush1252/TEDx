@@ -13,7 +13,13 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.auth.GoogleAuthUtil;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import java.util.Calendar;
+
+import static android.content.Context.MODE_PRIVATE;
 
 /**
  * Created by ayush on 16/2/17.
@@ -45,6 +51,9 @@ public class TabFragment extends android.support.v4.app.Fragment implements com.
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         next = (FloatingActionButton) view.findViewById(R.id.next);
+        final SharedPreferences sharedPreferences=this.getActivity().getSharedPreferences("Login",MODE_PRIVATE);
+        FirebaseUser firebaseUser=FirebaseAuth.getInstance().getCurrentUser();
+
 
 //        if(next==null)
 //            Toast.makeText(getActivity(), "Null hai", Toast.LENGTH_SHORT).show();
@@ -56,6 +65,12 @@ public class TabFragment extends android.support.v4.app.Fragment implements com.
         //FirstName.setFocusable(false);
         LastName= (EditText) view.findViewById(R.id.Lname);
         Email= (EditText) view.findViewById(R.id.Email);
+        try {
+            Email.setText(firebaseUser.getEmail());
+           // Email.setFocusable(false);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         Phone= (EditText) view.findViewById(R.id.Phone);
         POW= (EditText) view.findViewById(R.id.Work);
         DOB= (EditText) view.findViewById(R.id.DOB);
@@ -63,6 +78,11 @@ public class TabFragment extends android.support.v4.app.Fragment implements com.
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                //GoogleAuthUtil.getToken(getActivity(),FirebaseAuth.getInstance().getCurrentUser(),)
+                RegistrationActivity.registrationform.setId(sharedPreferences.getString("token",null));
+               // RegistrationActivity.registrationform.setUsername(sharedPreferences.getString("username",null));
+
                 if(FirstName.getText().toString().length()==0) {
                     FirstName.setError("This Cannot be empty");
                     return;

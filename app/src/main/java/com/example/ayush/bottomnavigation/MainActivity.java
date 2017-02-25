@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Toast.makeText(this,SignInActivity.str.get(0), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this,SignInActivity.str.get(0), Toast.LENGTH_SHORT).show();
 
         AHBottomNavigation bottomNavigation = (AHBottomNavigation) findViewById(R.id.bottom_navigation);
         AHBottomNavigationItem item1 = new AHBottomNavigationItem("Favourite", R.drawable.ic_favorite_white_24dp, R.color.colorAccent);

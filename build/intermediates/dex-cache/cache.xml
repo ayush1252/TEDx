@@ -151,7 +151,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="5592ab4540eb13750c751275027a35d5912c47ed">
+        sha1="1b2d11acdb96d2df429d5826aa4fd03d1266aa88">
         <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_d5810522cd93e3f4201cb6328ae199ceabdc8b27/classes.dex" />
     </item>
     <item
@@ -232,8 +232,17 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="2d63302cbdd813d5649062d9a29730a195847446">
+        sha1="b8c724c014d1456e8384254d0e128d4cf0134e05">
         <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_0a0f320055633b4defe816f68f652e62ed7765fd/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/9.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="811202a9098047576814fc2171b56b83b537a8b9">
+        <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-appindexing-9.2.0_e84545683d93f6a42663e2e924addaa76f2cbdd7/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -306,6 +315,15 @@
         revision="24.0.2"
         sha1="02741d05d4b697fba5e279e9881aaa1da0ca7c7f">
         <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.1.1_410d6f9d3415ff66792c53b91cb8512f729a89b3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/exploded-aar/com.android.volley/volley/1.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="2cd4b982617e544728de0782d718a58ce1b06e3f">
+        <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.volley-volley-1.0.0_393385f31be7217551a0dd07a321bcc9ab42aed8/classes.dex" />
     </item>
     <item
         is-multidex="true"

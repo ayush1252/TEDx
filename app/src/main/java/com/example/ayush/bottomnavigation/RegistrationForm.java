@@ -1,5 +1,11 @@
 package com.example.ayush.bottomnavigation;
 
+import android.content.SharedPreferences;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 /**
  * Created by ayush on 17/2/17.
  */
@@ -15,6 +21,7 @@ public  class RegistrationForm {
     String secondname;
     String email;
     String phone;
+    Integer gender;
     String placeofwork;
     String dob;
     String adress;
@@ -25,6 +32,15 @@ public  class RegistrationForm {
     String know;
     String attend;
     String ideas;
+    String id;
+
+    public String getId()
+    {
+        return id;
+    }
+
+    public void setId(String id){ this.id=id;}
+
 
     public String getFirstname() {
         return firstname;
@@ -136,6 +152,43 @@ public  class RegistrationForm {
 
     public void setDob(String dob) {
         this.dob = dob;
+    }
+
+    public void setgender(Integer gender) {
+        this.gender = gender;
+    }
+
+    public  Integer getgender(){return gender;}
+
+    public  JSONObject toJSON()
+    {
+
+
+        JSONObject jsonObject=new JSONObject();
+        try {
+            jsonObject.put("user_token",getId());
+            jsonObject.put("username",getEmail());
+            jsonObject.put("fname",getFirstname());
+            jsonObject.put("lname",getSecondname());
+            jsonObject.put("contact",getPhone());
+           JSONObject user_detail=new JSONObject();
+            user_detail.put("college",getPlaceofwork());
+            user_detail.put("dob",getDob());
+
+            user_detail.put("address",getAdress());
+            user_detail.put("locality",getLocality());
+            user_detail.put("city",getCity());
+            user_detail.put("gender",getgender());
+            user_detail.put("how",getKnow());
+            user_detail.put("why",getAttend());
+            user_detail.put("ideas",getIdeas());
+            jsonObject.put("user_detail",user_detail);
+            return jsonObject;
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 

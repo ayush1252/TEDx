@@ -21,6 +21,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.ayush.bottomnavigation.NetworkServices.WebViewC;
+
 public class SpeakerActivity extends AppCompatActivity {
     private static final int PERCENTAGE_TO_ANIMATE_AVATAR = 20;
     private boolean mIsAvatarShown = true;
@@ -122,6 +124,9 @@ public class SpeakerActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplication(), "Floating Action Button 1", Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent();
+                intent.setClass(SpeakerActivity.this, WebViewC.class);
+                startActivity(intent);
             }
         });
 

@@ -20,6 +20,7 @@
         <activity android:name=".SpeakerActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".RegistrationActivity"
+            android:windowSoftInputMode="stateHidden"
             android:theme="@style/MyMaterialTheme"
             >
         </activity><!-- ATTENTION: This was auto-generated to add Google Play services to your project for

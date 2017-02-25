@@ -83,6 +83,7 @@ public class Tab2Fragment extends android.support.v4.app.Fragment implements Ada
         citizenship.setOnItemSelectedListener(this);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_dropdown_item, countries);
         citizenship.setAdapter(adapter);
+        citizenship.setPrompt("Country");
         return v;
 
 

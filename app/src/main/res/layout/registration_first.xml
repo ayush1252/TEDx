@@ -19,14 +19,14 @@
         android:layout_height="wrap_content"
         android:hint="First Name"
         android:id="@+id/Fname"
-        android:drawableLeft="@drawable/ic_user"
+        android:drawableLeft="@drawable/user"
         android:drawablePadding="10dp"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Last Name"
         android:layout_marginTop="20dp"
-        android:drawableLeft="@drawable/ic_user"
+        android:drawableLeft="@drawable/user"
         android:id="@+id/Lname"
         android:layout_below="@+id/Fname"
         android:drawablePadding="10dp"/>
@@ -40,7 +40,7 @@
         android:layout_marginTop="20dp"
         android:id="@+id/Email"
         android:inputType="textEmailAddress"
-        android:drawableLeft="@drawable/ic_envelope"
+        android:drawableLeft="@drawable/ic_mail_9"
         android:drawablePadding="10dp"/>
 
     <android.support.v7.widget.AppCompatEditText
@@ -52,7 +52,7 @@
         android:id="@+id/Phone"
         android:inputType="phone"
         android:layout_marginTop="20dp"
-        android:drawableLeft="@drawable/ic_envelope"
+        android:drawableLeft="@drawable/phone"
         android:drawablePadding="10dp"/>
 
 
@@ -65,7 +65,7 @@
         android:layout_marginTop="20dp"
 
         android:layout_below="@+id/Phone"
-        android:drawableLeft="@drawable/ic_envelope"
+        android:drawableLeft="@drawable/pow"
         android:drawablePadding="10dp"/>
 
 
@@ -75,7 +75,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/DOB"
         android:layout_marginTop="20dp"
-        android:drawableLeft="@drawable/ic_envelope"
+        android:drawableLeft="@drawable/dob"
         android:layout_below="@id/Work"
         android:hint="DOB"
         android:drawablePadding="10dp" />
@@ -83,9 +83,8 @@
         <android.support.design.widget.FloatingActionButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_user"
+            android:src="@drawable/next"
             android:id="@+id/next"
-            android:background="@color/colorAccent"
             android:layout_alignParentBottom="true"
             android:layout_below="@+id/DOB"
             android:layout_alignParentEnd="true"

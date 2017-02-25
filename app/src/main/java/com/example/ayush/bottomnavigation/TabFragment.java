@@ -62,12 +62,13 @@ public class TabFragment extends android.support.v4.app.Fragment implements com.
 //
 
         FirstName= (EditText) view.findViewById(R.id.Fname);
+
         //FirstName.setFocusable(false);
         LastName= (EditText) view.findViewById(R.id.Lname);
         Email= (EditText) view.findViewById(R.id.Email);
         try {
             Email.setText(firebaseUser.getEmail());
-           // Email.setFocusable(false);
+            //Email.setFocusable(false);
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -172,8 +172,9 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
 
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
-        mGoogleApiClient.connect();
+
         AppIndex.AppIndexApi.start(mGoogleApiClient, getIndexApiAction());
+        mGoogleApiClient.connect();
     }
 
     @Override

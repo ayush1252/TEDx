@@ -16,6 +16,7 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -24,6 +25,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.example.ayush.bottomnavigation.NetworkServices.VolleySingleton;
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
 import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONArray;
@@ -197,56 +199,145 @@ public class Tab2Fragment extends android.support.v4.app.Fragment implements Ada
                 Toast.makeText(getActivity(), "FINISH", Toast.LENGTH_SHORT).show();
 
                 JSONObject jsonObject=RegistrationActivity.registrationform.toJSON();
+
                 String url= String.valueOf(URI.create("http://api.tedxdtu.in/api/register"));
                 Log.d("TAG",jsonObject.toString());
                 Log.d("TAG",url);
-                StringRequest stringrequest=new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+//                final Map<String,String> mymap=new HashMap<String, String>();
+//                try {
+//                    mymap.put("username",jsonObject.getString("username"));
+//                    mymap.put("fname",jsonObject.getString("fname"));
+//                    mymap.put("lname",jsonObject.getString("lname"));
+//                    mymap.put("contact",jsonObject.getString("contact"));
+//                    mymap.put("college",jsonObject.getString("college"));
+//                    mymap.put("dob",jsonObject.getString("dob"));
+//                    mymap.put("address",jsonObject.getString("address"));
+//                    mymap.put("locality",jsonObject.getString("locality"));
+//                    mymap.put("city",jsonObject.getString("city"));
+//                    mymap.put("gender",jsonObject.getString("gender"));
+//                    mymap.put("how",jsonObject.getString("how"));
+//                    mymap.put("why",jsonObject.getString("why"));
+//                    mymap.put("ideas",jsonObject.getString("ideas"));
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                }
+//                Log.d("TAG", String.valueOf(mymap));
+
+
+
+               /*This is for the GET APis testinG
+                String url2= String.valueOf(URI.create("http://api.tedxdtu.in/api/user/application"));
+//                JSONObject nejsonObject=new JSONObject();
+//                try {
+//                    nejsonObject.put("tedxdtu-token",getString(R.string.lala));
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                }
+
+                JsonObjectRequest jsnObjReq=new JsonObjectRequest(Request.Method.GET,url2,null, new Response.Listener<JSONObject>() {
                     @Override
-                    public void onResponse(String response1) {
-
-                        try {
-                            JSONObject response=new JSONObject(response1);
-                            Log.d("TAG",response.toString());
-                            Log.d("RESPONSE",response.toString());
-                            Toast.makeText(getActivity(), response.toString(), Toast.LENGTH_SHORT).show();
-                            JSONObject error= null;
-                            try {
-                                error = response.getJSONObject("error");
-                                if(error==null)
-                                {
-                                    JSONObject user=response.getJSONObject("user");
-                                    String status=user.getString("user_status");
-                                    String apitoken=user.getString("api_token");
-                                    editor.putString(getString(R.string.Token),apitoken);
-                                    editor.putString(getString(R.string.Status),status);
-                                    Log.d("TAG",status);
-                                    Log.d("TAG",apitoken);
-                                    editor.commit();
-                                }
-                                else
-                                {
-                                    String message=error.getString("msg");
-                                    Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show(); }
-                            } catch (JSONException e) {
-                                Toast.makeText(getActivity(), e.toString(), Toast.LENGTH_LONG).show();
-                                e.printStackTrace();
-                            }
-
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-
+                    public void onResponse(JSONObject response) {
+                        Log.d("TAG",response.toString());
 
                     }
                 }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getActivity(), "We are facing some issues , please try again later", Toast.LENGTH_SHORT).show();
-                        String tag=String.valueOf(error.networkResponse.statusCode);
-                        Log.d("TAG",error.toString()+"\n"+ error.getMessage()+"\n"+error.networkResponse+"\n"+tag);
+                        Log.d("TAG", String.valueOf(error.networkResponse.statusCode));
+                        Log.d("TAG",error.toString()+error.networkResponse+error.networkResponse.statusCode);
+
                     }
-                });
+                }){
+                    @Override
+                    public Map<String, String> getHeaders() throws AuthFailureError {
+                        Log.d("TAG","HUA");
+                        Map<String, String>  params = new HashMap<String, String>();
+                        params.put("Content-Type", "application/json");
+                        params.put("tedxdtu-token", "42418c448bca92a5115848f3b642dde3b8d7a3beaf181a22ffaea5c4f6fe87c8");
+                        Log.d("TAG","HUA");
+                        return params;
+                    }
+
+                };*/
+
+
+//                JSONArray jsonArray= new JSONArray();
+//                jsonArray.put(jsonObject);
+//                JsonArrayRequest jsonArrayRequesr=new JsonArrayRequest(Request.Method.POST, url, jsonArray, new Response.Listener<JSONArray>() {
+//                    @Override
+//                    public void onResponse(JSONArray response) {
+//
+//                        Toast.makeText(getActivity(), "YAHAN HUN", Toast.LENGTH_SHORT).show();
+//                        Log.d("TAG",response.toString());
+//
+//                    }
+//                }, new Response.ErrorListener() {
+//                    @Override
+//                    public void onErrorResponse(VolleyError error) {
+//                        Toast.makeText(getActivity(), "NAhin hun", Toast.LENGTH_SHORT).show();
+//                        Log.d("TAG",error.toString());
+//                    }
+//                });
+
+//                StringRequest stringrequest=new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+//                    @Override
+//                    public void onResponse(String response1) {
+//
+//                        try {
+//                            JSONObject response=new JSONObject(response1);
+//                            Log.d("TAG",response.toString());
+//                            Log.d("RESPONSE",response.toString());
+//                            Toast.makeText(getActivity(), response.toString(), Toast.LENGTH_SHORT).show();
+//                            JSONObject error= null;
+//                            try {
+//                                error = response.getJSONObject("error");
+//                                if(error==null)
+//                                {
+//                                    JSONObject user=response.getJSONObject("user");
+//                                    String status=user.getString("user_status");
+//                                    String apitoken=user.getString("api_token");
+//                                    editor.putString(getString(R.string.Token),apitoken);
+//                                    editor.putString(getString(R.string.Status),status);
+//                                    Log.d("TAG",status);
+//                                    Log.d("TAG",apitoken);
+//                                    editor.commit();
+//                                }
+//                                else
+//                                {
+//                                    String message=error.getString("msg");
+//                                    Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show(); }
+//                            } catch (JSONException e) {
+//                                Toast.makeText(getActivity(), e.toString(), Toast.LENGTH_LONG).show();
+//                                e.printStackTrace();
+//                            }
+//
+//
+//                        } catch (JSONException e) {
+//                            e.printStackTrace();
+//                        }
+//
+//
+//                    }
+//                }, new Response.ErrorListener() {
+//                    @Override
+//                    public void onErrorResponse(VolleyError error) {
+//                        Toast.makeText(getActivity(), "We are facing some issues , please try again later", Toast.LENGTH_SHORT).show();
+//                        String tag=String.valueOf(error.networkResponse.statusCode);
+//                        Log.d("TAG",error.toString()+"\n"+ error.getMessage()+"\n"+error.networkResponse+"\n"+tag);
+//                    }
+//                }){
+//
+//                    @Override
+//                    protected Map<String, String> getParams() throws AuthFailureError {
+//                        Log.d("TAG","Hua");
+//                        return mymap;
+//                    }
+//                };
+
+
+
+//                Log.d("TAG", String.valueOf(retMap));
+//                Log.d("TAG", String.valueOf(mymap));
 
                 JsonObjectRequest jsonObjectRequest=new JsonObjectRequest(Request.Method.POST, url, jsonObject, new Response.Listener<JSONObject>() {
                     @Override
@@ -254,28 +345,33 @@ public class Tab2Fragment extends android.support.v4.app.Fragment implements Ada
 
                         Log.d("TAG",response.toString());
                         Log.d("RESPONSE",response.toString());
-                        Toast.makeText(getActivity(), response.toString(), Toast.LENGTH_SHORT).show();
-                        JSONObject error= null;
+                        //Toast.makeText(getActivity(), response.toString(), Toast.LENGTH_SHORT).show();
                         try {
-                            error = response.getJSONObject("error");
-                            if(error==null)
+
+                            if(!response.has("error"))
                             {
+                                Log.d("TAG","one");
                                 JSONObject user=response.getJSONObject("user");
+                                Log.d("TAG","one");
                                 String status=user.getString("user_status");
                                 String apitoken=user.getString("api_token");
                                 editor.putString(getString(R.string.Token),apitoken);
                                 editor.putString(getString(R.string.Status),status);
-                                Log.d("TAG",status);
-                                Log.d("TAG",apitoken);
+                                Log.d("RESPONSE",status);
+                                Log.d("RESPONSE",apitoken);
                                 editor.commit();
                             }
                             else
                             {
+                                JSONObject error = response.getJSONObject("error");
                                 String message=error.getString("msg");
                                 Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show(); }
+
+
                         } catch (JSONException e) {
                             Toast.makeText(getActivity(), e.toString(), Toast.LENGTH_LONG).show();
-                            e.printStackTrace();
+                            Log.d("TAG",e.toString());
+                            Log.d("TAG", String.valueOf(e.getStackTrace()));
                         }
 
 
@@ -283,15 +379,14 @@ public class Tab2Fragment extends android.support.v4.app.Fragment implements Ada
                 }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-
                         Toast.makeText(getActivity(), "We are facing some issues , please try again later", Toast.LENGTH_SHORT).show();
-                        String tag=String.valueOf(error.networkResponse.statusCode);
+                        Integer tag=1;
                         Log.d("TAG",error.toString()+"\n"+ error.getMessage()+"\n"+error.networkResponse+"\n"+tag);
                     }
                 });
 
-                VolleySingleton.getInstance(getContext()).addToRequestQueue(stringrequest);
                 VolleySingleton.getInstance(getContext()).addToRequestQueue(jsonObjectRequest);
+                //YAHN SE MAIN ACTIVITY YA FIR JO BHI KHOLNA HAI KHOL DO
             }
         });
 

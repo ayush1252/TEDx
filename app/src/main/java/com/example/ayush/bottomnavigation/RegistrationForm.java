@@ -166,23 +166,21 @@ public  class RegistrationForm {
 
         JSONObject jsonObject=new JSONObject();
         try {
-            jsonObject.put("user_token",getId());
+           // jsonObject.put("user_token",getId());
             jsonObject.put("username",getEmail());
             jsonObject.put("fname",getFirstname());
             jsonObject.put("lname",getSecondname());
             jsonObject.put("contact",getPhone());
-           JSONObject user_detail=new JSONObject();
-            user_detail.put("college",getPlaceofwork());
-            user_detail.put("dob",getDob());
-
-            user_detail.put("address",getAdress());
-            user_detail.put("locality",getLocality());
-            user_detail.put("city",getCity());
-            user_detail.put("gender",getgender());
-            user_detail.put("how",getKnow());
-            user_detail.put("why",getAttend());
-            user_detail.put("ideas",getIdeas());
-            jsonObject.put("user_detail",user_detail);
+            jsonObject.put("college",getPlaceofwork());
+            jsonObject.put("dob",getDob());
+            jsonObject.put("address",getAdress());
+            jsonObject.put("locality",getLocality());
+            jsonObject.put("city",getCity());
+            jsonObject.put("gender",getgender());
+            jsonObject.put("how",getKnow());
+            jsonObject.put("why",getAttend());
+            jsonObject.put("ideas",getIdeas());
+            //jsonObject.put("user_detail",user_detail);
             return jsonObject;
 
         } catch (JSONException e) {

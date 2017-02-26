@@ -6,13 +6,21 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.squareup.picasso.Picasso;
+
+import java.util.Locale;
+
+import de.cketti.mailto.EmailIntentBuilder;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * Created by Rashi on 27-02-2017.
@@ -21,12 +29,12 @@ import com.google.firebase.auth.FirebaseUser;
 public class Profile extends AppCompatActivity {
     ImageView phone;
     ImageView mail,location;
-    SharedPreferences sharedPreferences;
     String email, name;
     FirebaseAuth firebaseAuth;
     TextView mailid,person,statustext;
     String status;
     Button button;
+    CircleImageView profileimage;
 
 
     @Override
@@ -36,14 +44,19 @@ public class Profile extends AppCompatActivity {
         button = (Button)findViewById(R.id.button);
         statustext = (TextView)findViewById(R.id.status);
         FirebaseUser user = firebaseAuth.getInstance().getCurrentUser();
+        profileimage= (CircleImageView) findViewById(R.id.profile_image);
+        Picasso.with(this)
+                .load(String.valueOf(user.getPhotoUrl()))
+                .placeholder(R.drawable.ic_user)
+                .error(R.drawable.ic_user)
+                .into(profileimage);
 
-        sharedPreferences= getSharedPreferences("Login",MODE_PRIVATE);
-        SharedPreferences.Editor editor=sharedPreferences.edit();
 
         mailid = (TextView)findViewById(R.id.mailid);
         person = (TextView)findViewById(R.id.personname);
+        Log.d("Profile", String.valueOf(user.getPhotoUrl()));
 
-        email = sharedPreferences.getString("username","abc");
+        email = user.getEmail();
         name = user.getDisplayName();
 
         mailid.setText(email);
@@ -63,15 +76,31 @@ public class Profile extends AppCompatActivity {
         mail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                EmailIntentBuilder.from(Profile.this)
+                        .to("support@tedxdtu.in")
+                        .subject("Support TEDxDTU")
+                        .start();
 
-                Intent sendIntent = new Intent(Intent.ACTION_VIEW);
-                sendIntent.setType("plain/text");
-                sendIntent.setData(Uri.parse("lookforayush@gmail.com"));
-                sendIntent.setClassName("com.google.android.gm", "com.google.android.gm.ComposeActivityGmail");
-                sendIntent.putExtra(Intent.EXTRA_EMAIL, new String[] { "lookforayush@gmail.com" });
-                //sendIntent.putExtra(Intent.EXTRA_SUBJECT, "test");
-                //sendIntent.putExtra(Intent.EXTRA_TEXT, "hello. this is a message sent from my demo app :-)");
-                startActivity(sendIntent);
+            }
+        });
+        findViewById(R.id.writ).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mail.performClick();
+            }
+        });
+
+        findViewById(R.id.cont).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                phone.performClick();
+            }
+        });
+
+        findViewById(R.id.loc).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               location.performClick();
             }
         });
 
@@ -84,14 +113,13 @@ public class Profile extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        SharedPreferences sharedPreferences1 = getSharedPreferences(String.valueOf(R.string.MainInfo),MODE_PRIVATE);
-        status = sharedPreferences1.getString(String.valueOf(R.string.Status), String.valueOf(R.string.unregistered));
-
-
+        SharedPreferences sharedPreferences1 = getSharedPreferences(getString(R.string.MainInfo),MODE_PRIVATE);
+        status = sharedPreferences1.getString(getString(R.string.Status), getString(R.string.unregistered));
+        Toast.makeText(this, status, Toast.LENGTH_SHORT).show();
         if(status.equals("unregistered")){
             statustext.setText("Unregistered");
         }
-        else if(status.equals("waiting")){
+        else if(status.equals("registered")){
             statustext.setText("Awaiting Response");
 
 

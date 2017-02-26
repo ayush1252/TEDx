@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
               }
 
               if(position==2) {
-                  Intent intent = new Intent(getApplicationContext(), RegistrationActivity.class);
+                  Intent intent = new Intent(getApplicationContext(), Profile.class);
                   startActivity(intent);
                   return true;
               }

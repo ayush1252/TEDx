@@ -12,15 +12,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="/home/ayush/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.3.2/d6b7f0093cec6c9faf65dbfd6a6a345d0ed25e27/picasso-2.3.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="d6b7f0093cec6c9faf65dbfd6a6a345d0ed25e27">
-        <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/picasso-2.3.2_8d710ee00558ebb1e2ddf0cbe4c55535f39d434d/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.2.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -151,7 +142,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="b35ceb452fe3533493a4aa3f900806b71d6f58ce">
+        sha1="5697a9ce3166f63c1f79393cbe24bd30aa2f7d14">
         <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_d5810522cd93e3f4201cb6328ae199ceabdc8b27/classes.dex" />
     </item>
     <item
@@ -162,6 +153,15 @@
         revision="24.0.2"
         sha1="0fb891e8f0cfba0513043a7bb357513d229ca2cd">
         <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.1.1_477f1c103e40900a1157950d44ed0751f464f46b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/exploded-aar/de.cketti.mailto/email-intent-builder/1.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="25b3e8060d89ffd9749008a0c06f265a94130b58">
+        <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/de.cketti.mailto-email-intent-builder-1.0.0_a91f851eb28f702e5f7a04be3caa3548dcc74486/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -232,7 +232,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="4c74a31bb41b8a537030faa09ab11f551376c3fc">
+        sha1="fa408a4a804bf728428103f22384728aaa20a471">
         <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_0a0f320055633b4defe816f68f652e62ed7765fd/classes.dex" />
     </item>
     <item
@@ -315,6 +315,15 @@
         revision="24.0.2"
         sha1="02741d05d4b697fba5e279e9881aaa1da0ca7c7f">
         <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.1.1_410d6f9d3415ff66792c53b91cb8512f729a89b3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/ayush/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.4.0/f36d2d4e3a36b3259aaf9d004d29b4cdc6c1bfb2/picasso-2.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="f36d2d4e3a36b3259aaf9d004d29b4cdc6c1bfb2">
+        <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/transforms/dex/debug/folders/1000/10/picasso-2.4.0_05ce6156be80a8dfedfbcca908a1898a1a460dcc/classes.dex" />
     </item>
     <item
         is-multidex="true"

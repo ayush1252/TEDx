@@ -123,7 +123,7 @@ public class SpeakerActivity extends AppCompatActivity {
         fab1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplication(), "Floating Action Button 1", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplication(), "Floating Action Button 1", Toast.LENGTH_SHORT).show();
                 Intent intent=new Intent();
                 intent.setClass(SpeakerActivity.this, WebViewC.class);
                 startActivity(intent);
@@ -133,14 +133,20 @@ public class SpeakerActivity extends AppCompatActivity {
         fab2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplication(), "Floating Action Button 2", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplication(), "Floating Action Button 2", Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent();
+                intent.setClass(SpeakerActivity.this, WebViewC.class);
+                startActivity(intent);
             }
         });
 
         fab3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplication(), "Floating Action Button 3", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(getApplication(), "Floating Action Button 3", Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent();
+                intent.setClass(SpeakerActivity.this, WebViewC.class);
+                startActivity(intent);
             }
         });
 
@@ -208,4 +214,10 @@ public class SpeakerActivity extends AppCompatActivity {
         fab3.setClickable(false);
     }
 
+//    @Override
+//    public void onBackPressed() {
+//        Intent intent=new Intent(SpeakerActivity.this,MainActivity.class);
+//        //intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//        startActivity(intent);
+//    }
 }

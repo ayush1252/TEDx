@@ -90,4 +90,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        bottomNavigation.setCurrentItem(1);
+
+    }
 }

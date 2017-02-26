@@ -62,16 +62,31 @@ public class TabFragment extends android.support.v4.app.Fragment implements com.
 //
 
         FirstName= (EditText) view.findViewById(R.id.Fname);
+        try {
+            FirstName.setText(firebaseUser.getDisplayName().split(" ")[0]);
+        }
+        catch (Exception e)
+        {
 
+        }
         //FirstName.setFocusable(false);
         LastName= (EditText) view.findViewById(R.id.Lname);
+        try {
+            LastName.setText(firebaseUser.getDisplayName().split(" ")[1]);
+        }
+        catch (Exception e)
+        {
+
+        }
         Email= (EditText) view.findViewById(R.id.Email);
         try {
             Email.setText(firebaseUser.getEmail());
-            //Email.setFocusable(false);
+            Email.setFocusable(false);
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+
         Phone= (EditText) view.findViewById(R.id.Phone);
         POW= (EditText) view.findViewById(R.id.Work);
         DOB= (EditText) view.findViewById(R.id.DOB);

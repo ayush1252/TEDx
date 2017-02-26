@@ -36,7 +36,7 @@ public class WebViewC extends AppCompatActivity {
             public void onProgressChanged(WebView view, int progress)
             {
                 //Make the bar disappear after URL is loaded, and changes string to Loading...
-                setTitle("Loading....");
+                setTitle(url);
                 setProgress(progress * 100); //Make the bar disappear after URL is loaded
 
                 // Return the app name after finish loading

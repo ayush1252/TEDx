@@ -48,6 +48,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
             Intent i = new Intent(SignInActivity.this, MainActivity.class);
+            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i);
         }
         str.add("This Works");
@@ -142,6 +143,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
                 });
 
         Intent i=new Intent(SignInActivity.this,MainActivity.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(i);
     }
 

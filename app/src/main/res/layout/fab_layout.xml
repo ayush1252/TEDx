@@ -10,9 +10,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="15dp"
-        android:src="@android:drawable/ic_menu_compass"
+        android:src="@drawable/facebook"
         android:visibility="invisible"
-        app:backgroundTint="@color/colorAccent"
+        app:backgroundTint="@color/windowBackground"
         app:fabSize="mini" />
 
     <android.support.design.widget.FloatingActionButton
@@ -21,9 +21,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="15dp"
-        android:src="@android:drawable/ic_menu_myplaces"
+        android:src="@drawable/twitter"
         android:visibility="invisible"
-        app:backgroundTint="@color/colorAccent"
+        app:backgroundTint="@color/windowBackground"
         app:fabSize="mini" />
 
     <android.support.design.widget.FloatingActionButton
@@ -32,8 +32,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="15dp"
-        android:src="@android:drawable/ic_menu_share"
+        android:src="@drawable/linkedin"
         android:visibility="invisible"
-        app:backgroundTint="@color/colorAccent"
+        app:backgroundTint="@color/windowBackground"
         app:fabSize="mini" />
 </FrameLayout>

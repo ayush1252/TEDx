@@ -30,6 +30,8 @@
 
     <string name="lala">42418c448bca92a5115848f3b642dde3b8d7a3beaf181a22ffaea5c4f6fe87c8</string>
 
+	<string name="unregistered">unregistered</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

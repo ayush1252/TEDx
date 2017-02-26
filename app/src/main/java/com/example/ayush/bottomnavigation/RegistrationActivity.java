@@ -26,7 +26,7 @@ public static RegistrationForm registrationform;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
         registrationform=new RegistrationForm();
-        Toolbar toolbar= (Toolbar) findViewById(R.id.toolbar );
+        Toolbar toolbar= (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

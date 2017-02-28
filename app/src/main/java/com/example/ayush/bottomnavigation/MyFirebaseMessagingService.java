@@ -93,19 +93,19 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 Bitmap myBitmap = BitmapFactory.decodeStream(in);
                 return myBitmap;
             } catch (MalformedURLException e) {
+                Log.d(TAG,"YES!");
                 e.printStackTrace();
             } catch (IOException e) {
+                Log.d(TAG,"YES@");
                 e.printStackTrace();
             }
             return null;
         }
 
-        @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
         @Override
         protected void onPostExecute(Bitmap result) {
-            super.onPostExecute(result);
-            float multiplier= getImageFactor(getResources());
-            result=Bitmap.createScaledBitmap(result, (int)(result.getWidth()*multiplier), (int)(result.getHeight()*multiplier), false);
+            //super.onPostExecute(result);
+
 
             Intent intent = new Intent(mContext, MainActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -122,7 +122,6 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                     .setSmallIcon(R.mipmap.ic_launcher)
                     .setLargeIcon(result)
                     .setSound(defaultSoundUri)
-                    .setPriority(Notification.PRIORITY_MAX)
                     .setStyle(new Notification.BigPictureStyle().bigPicture(result))
                     .build();
             notif.flags |= Notification.FLAG_AUTO_CANCEL;

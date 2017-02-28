@@ -22,12 +22,14 @@ import com.android.volley.toolbox.StringRequest;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
 import com.daimajia.slider.library.Animations.DescriptionAnimation;
+import com.daimajia.slider.library.Indicators.PagerIndicator;
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.DefaultSliderView;
 import com.daimajia.slider.library.Tricks.ViewPagerEx;
 import com.example.ayush.bottomnavigation.NetworkServices.VolleySingleton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.crash.FirebaseCrash;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -44,44 +46,32 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        FirebaseCrash.report(new Exception("My first Android non-fatal error"));
 
         mDemoSlider = (SliderLayout)findViewById(R.id.slider);
-        DefaultSliderView defaultSliderView=new DefaultSliderView(this);
-        defaultSliderView.image(R.drawable.image0);
-        mDemoSlider.addSlider(defaultSliderView);
+
         DefaultSliderView defaultSliderView1=new DefaultSliderView(this);
-        defaultSliderView1.image(R.drawable.image1);
+        defaultSliderView1.image(R.drawable.image1min);
         mDemoSlider.addSlider(defaultSliderView1);
+
         DefaultSliderView defaultSliderView2=new DefaultSliderView(this);
-        defaultSliderView2.image(R.drawable.image2);
+        defaultSliderView2.image(R.drawable.image2min);
         mDemoSlider.addSlider(defaultSliderView2);
+
         DefaultSliderView defaultSliderView3=new DefaultSliderView(this);
-        defaultSliderView3.image(R.drawable.imag3);
+        defaultSliderView3.image(R.drawable.image3min);
         mDemoSlider.addSlider(defaultSliderView3);
+
         DefaultSliderView defaultSliderView4=new DefaultSliderView(this);
-        defaultSliderView4.image(R.drawable.image4);
+        defaultSliderView4.image(R.drawable.ibag);
         mDemoSlider.addSlider(defaultSliderView4);
 
         mDemoSlider.setPresetTransformer(SliderLayout.Transformer.Accordion);
         //mDemoSlider.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);
         mDemoSlider.setCustomAnimation(new DescriptionAnimation());
-        mDemoSlider.setDuration(8000);
-        mDemoSlider.addOnPageChangeListener(new ViewPagerEx.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+        mDemoSlider.setDuration(4000);
+        mDemoSlider.setIndicatorVisibility(PagerIndicator.IndicatorVisibility.Invisible);
 
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-        });
 
 
         bottomNavigation = (AHBottomNavigation) findViewById(R.id.bottom_navigation);
@@ -127,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
         FirebaseUser firebaseUser= FirebaseAuth.getInstance().getCurrentUser();
         try {
             jsonObject.put("username",firebaseUser.getEmail());
-        } catch (JSONException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -143,11 +133,11 @@ public class MainActivity extends AppCompatActivity {
                     editor.putString(getString(R.string.Status),getString(R.string.unregistered));
                     editor.putString(getString(R.string.Token)," ");
                     editor.commit();
-                    Toast.makeText(MainActivity.this, "ABAB"+response.toString(), Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(MainActivity.this, "ABAB"+response.toString(), Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
-                    Toast.makeText(MainActivity.this, response.toString(), Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(MainActivity.this, response.toString(), Toast.LENGTH_SHORT).show();
                     String token="";
                     try {
                        token=response.getString("token");

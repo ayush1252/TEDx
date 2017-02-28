@@ -81,7 +81,7 @@ public class SpeakerActivity extends AppCompatActivity {
         Picasso.with(this)
                 .load(prof)
                 .placeholder(R.drawable.progress_animation)
-                .error(R.drawable.progress_animation)
+                .error(R.drawable.notfoundsmall)
                 .into(profileimage);
 
         namet.setText(name);

@@ -1,6 +1,7 @@
 package com.example.ayush.bottomnavigation;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -24,6 +25,8 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.example.ayush.bottomnavigation.NetworkServices.VolleySingleton;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.reflect.TypeToken;
@@ -40,6 +43,8 @@ import java.util.Locale;
 import java.util.Map;
 
 import retrofit2.http.POST;
+
+import static android.content.Context.MODE_PRIVATE;
 
 /**
  * Created by ayush on 17/2/17.
@@ -114,7 +119,7 @@ public class Tab2Fragment extends android.support.v4.app.Fragment implements Ada
         attend= (EditText) view.findViewById(R.id.Attend);
         ideas= (EditText) view.findViewById(R.id.Ideas);
         finish= (FloatingActionButton) view.findViewById(R.id.finish);
-        SharedPreferences sharedprefrence=getActivity().getSharedPreferences(getString(R.string.MainInfo),Context.MODE_PRIVATE);
+        SharedPreferences sharedprefrence=getActivity().getSharedPreferences(getString(R.string.MainInfo), MODE_PRIVATE);
         final SharedPreferences.Editor editor=sharedprefrence.edit();
 
         finish.setOnClickListener(new View.OnClickListener() {
@@ -361,12 +366,118 @@ public class Tab2Fragment extends android.support.v4.app.Fragment implements Ada
                                 Log.d("RESPONSE",status);
                                 Log.d("RESPONSE",apitoken);
                                 editor.commit();
+                                startActivity(new Intent(getActivity(),MainActivity.class));
                             }
                             else
                             {
                                 JSONObject error = response.getJSONObject("error");
                                 String message=error.getString("msg");
-                                Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show(); }
+                                if(message.equals("Your filled application has the errors"))
+                                {
+                                    Toast.makeText(getActivity(), "Your form cannot be filled because it has errors.\nCity and Locality cannot have spaces", Toast.LENGTH_SHORT).show();
+                                }
+                                else
+                                {
+                                    Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
+                                    if(message.equals("Your account is ready!. We encountered a problem when sending mail to your given email address."))
+                                    {
+                                        JSONObject jsonObject1=new JSONObject();
+                                        String url1= String.valueOf(URI.create("http://api.tedxdtu.in/api/token"));
+                                        FirebaseUser firebaseUser= FirebaseAuth.getInstance().getCurrentUser();
+                                        try {
+                                            jsonObject1.put("username",firebaseUser.getEmail());
+                                        } catch (Exception e) {
+                                            e.printStackTrace();
+                                        }
+
+                                        JsonObjectRequest jsonObjectRequest1=new JsonObjectRequest(Request.Method.POST, url1, jsonObject1, new Response.Listener<JSONObject>() {
+                                            @Override
+                                            public void onResponse(JSONObject response) {
+
+                                                if(response.has("error"))
+                                                {
+                                                    //Yahan Exist nahi karta
+                                                    SharedPreferences sharedprefrence=getActivity().getSharedPreferences(getString(R.string.MainInfo),MODE_PRIVATE);
+                                                    SharedPreferences.Editor editor=sharedprefrence.edit();
+                                                    editor.putString(getString(R.string.Status),getString(R.string.unregistered));
+                                                    editor.putString(getString(R.string.Token)," ");
+                                                    editor.commit();
+                                                    Toast.makeText(getActivity(), "ABAB"+response.toString(), Toast.LENGTH_SHORT).show();
+                                                }
+                                                else
+                                                {
+                                                    Toast.makeText(getActivity(), response.toString(), Toast.LENGTH_SHORT).show();
+                                                    String token="";
+                                                    try {
+                                                        token=response.getString("token");
+                                                    } catch (JSONException e) {
+                                                        e.printStackTrace();
+                                                    }
+                                                    SharedPreferences sharedprefrence=getActivity().getSharedPreferences(getString(R.string.MainInfo), MODE_PRIVATE);
+                                                    final SharedPreferences.Editor editor=sharedprefrence.edit();
+                                                    if(token.length()!=0)
+                                                    {
+                                                        editor.putString(getString(R.string.Token),token);
+                                                        editor.commit();
+                                                        String url2=String.valueOf(URI.create("http://api.tedxdtu.in/api/user/application"));
+                                                        final String finalToken = token;
+                                                        JsonObjectRequest newjsonObjectRequest=new JsonObjectRequest(Request.Method.GET, url2, null, new Response.Listener<JSONObject>() {
+                                                            @Override
+                                                            public void onResponse(JSONObject response) {
+                                                                Toast.makeText(getActivity(), "LALALAL\n"+response.toString(), Toast.LENGTH_SHORT).show();
+                                                                if(response.has("error"))
+                                                                {
+
+                                                                }
+                                                                else
+                                                                { String status=getString(R.string.unregistered);
+                                                                    try {
+                                                                        status=response.getString("status");
+                                                                    } catch (JSONException e) {
+                                                                        e.printStackTrace();
+                                                                    }
+                                                                    editor.putString(getString(R.string.Status),status);
+                                                                    editor.commit();
+                                                                }
+
+                                                            }
+                                                        }, new Response.ErrorListener() {
+                                                            @Override
+                                                            public void onErrorResponse(VolleyError error) {
+                                                                Toast.makeText(getActivity(), "LALALAL\n"+error.toString(), Toast.LENGTH_SHORT).show();
+                                                            }
+                                                        }){
+                                                            @Override
+                                                            public Map<String, String> getHeaders() throws AuthFailureError {
+                                                                Log.d("TAG","HUA");
+                                                                Map<String, String>  params = new HashMap<String, String>();
+                                                                params.put("Content-Type", "application/json");
+                                                                params.put("tedxdtu-token", finalToken);
+                                                                Log.d("TAG","HUA");
+                                                                return params;
+
+                                                            }
+
+
+
+                                                        };
+                                                        VolleySingleton.getInstance(getActivity()).addToRequestQueue(newjsonObjectRequest);
+
+                                                    }
+                                                }}}, new Response.ErrorListener() {
+                                            @Override
+                                            public void onErrorResponse(VolleyError error) {
+
+                                                Toast.makeText(getActivity(), error.toString(), Toast.LENGTH_SHORT).show();
+
+                                            }
+                                        });
+
+                                        VolleySingleton.getInstance(getActivity()).addToRequestQueue(jsonObjectRequest1);
+                                        startActivity(new Intent(getActivity(),MainActivity.class));
+                                    }
+                                }
+                            }
 
 
                         } catch (JSONException e) {
@@ -388,6 +499,7 @@ public class Tab2Fragment extends android.support.v4.app.Fragment implements Ada
 
                 VolleySingleton.getInstance(getContext()).addToRequestQueue(jsonObjectRequest);
                 //YAHN SE MAIN ACTIVITY YA FIR JO BHI KHOLNA HAI KHOL DO
+
 
             }
         });

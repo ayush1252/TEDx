@@ -8,7 +8,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.5"
+        android:layout_weight="1.3"
         android:gravity="center"
         android:orientation="vertical"
         android:background="@color/colorPrimary">
@@ -56,7 +56,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Not Registered"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="15dp"
                 android:typeface="serif"
                 android:id="@+id/status"
                 android:textAllCaps="true"
@@ -75,7 +75,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.5"
+        android:layout_weight="1.7"
         android:orientation="vertical"
         android:weightSum="2"
         android:paddingTop="20dp">
@@ -84,8 +84,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="3"
-            android:layout_weight="0.5">
+            android:weightSum="3">
 
 
             <LinearLayout
@@ -179,14 +178,26 @@
         </LinearLayout>
 
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1.5"
+            android:layout_weight="2"
             android:padding="20dp">
 
 
-
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/imageview"
+                android:layout_above="@+id/button"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/transactiontext"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textAlignment="center"/>
 
 
 
@@ -194,6 +205,8 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_alignParentBottom="true"
                 android:text="Registration Form"
                 android:background="@color/colorPrimary"
                 android:fontFamily="monospace"
@@ -207,7 +220,7 @@
                 />
 
 
-        </LinearLayout>
+        </RelativeLayout>
 
 
 

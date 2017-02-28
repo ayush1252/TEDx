@@ -43,10 +43,21 @@ public class MainActivity extends AppCompatActivity {
 
         mDemoSlider = (SliderLayout)findViewById(R.id.slider);
         DefaultSliderView defaultSliderView=new DefaultSliderView(this);
-        defaultSliderView.image(R.drawable.pic2);
+        defaultSliderView.image(R.drawable.image0);
         mDemoSlider.addSlider(defaultSliderView);
-        mDemoSlider.addSlider(defaultSliderView);
-        mDemoSlider.addSlider(defaultSliderView);
+        DefaultSliderView defaultSliderView1=new DefaultSliderView(this);
+        defaultSliderView1.image(R.drawable.image1);
+        mDemoSlider.addSlider(defaultSliderView1);
+        DefaultSliderView defaultSliderView2=new DefaultSliderView(this);
+        defaultSliderView2.image(R.drawable.image2);
+        mDemoSlider.addSlider(defaultSliderView2);
+        DefaultSliderView defaultSliderView3=new DefaultSliderView(this);
+        defaultSliderView3.image(R.drawable.imag3);
+        mDemoSlider.addSlider(defaultSliderView3);
+        DefaultSliderView defaultSliderView4=new DefaultSliderView(this);
+        defaultSliderView4.image(R.drawable.image4);
+        mDemoSlider.addSlider(defaultSliderView4);
+
         mDemoSlider.setPresetTransformer(SliderLayout.Transformer.Accordion);
         //mDemoSlider.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);
         mDemoSlider.setCustomAnimation(new DescriptionAnimation());
@@ -79,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigation.addItem(item3);
 
         bottomNavigation.setDefaultBackgroundColor(getResources().getColor(R.color.colorPrimary));
-        bottomNavigation.setAccentColor(getResources().getColor(R.color.colorAccent));
+        bottomNavigation.setAccentColor(getResources().getColor(R.color.colorPrimary));
         bottomNavigation.setInactiveColor(getResources().getColor(R.color.colorBottomNavigationActiveColored));
 
         bottomNavigation.setForceTint(true);
@@ -93,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
 
               if(position==0)
               {
-                  Intent intent = new Intent(getApplicationContext(), SpeakerActivity.class);
+                  Intent intent = new Intent(getApplicationContext(), SpeakerRecyclerView.class);
                   startActivity(intent);
                   return true;
               }

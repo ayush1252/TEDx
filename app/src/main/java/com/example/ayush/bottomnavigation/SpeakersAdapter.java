@@ -1,6 +1,8 @@
 package com.example.ayush.bottomnavigation;
 
 
+import android.content.Context;
+import android.media.Image;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,6 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Target;
 
 import java.util.List;
 
@@ -18,39 +23,40 @@ import java.util.List;
 public class SpeakersAdapter extends RecyclerView.Adapter<SpeakersAdapter.MyViewHolder> {
 
 
-    List<SpeakersModel> speakersModels;
+    List<SpeakerClass> speakersModels;
+    Context context;
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView title;
-        public CardView abc;
+        public ImageView abc;
         public MyViewHolder(View view) {
             super(view);
-
-//            title = (TextView) view.findViewById(R.id.title)
-              abc = (CardView) view.findViewById(R.id.card_view);
+              abc = (ImageView) view.findViewById(R.id.card_view);
 
         }
     }
 
 
-    public SpeakersAdapter(List<SpeakersModel> speakersModels) {
+    public SpeakersAdapter(List<SpeakerClass> speakersModels,Context context) {
         this.speakersModels = speakersModels;
+        this.context=context;
     }
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.rview_item, parent, false);
-
         return new MyViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
 
-        SpeakersModel sm = speakersModels.get(position);
-       // holder.title.setText(sm.getName());
-        //For Ayush : Add code to set image via picasso
+        SpeakerClass sm = speakersModels.get(position);
+       String url= sm.getBg_img();
+        Picasso.with(context)
+                .load(url)
+                .error(R.drawable.demobanner)
+                .into(holder.abc);
 
     }
 

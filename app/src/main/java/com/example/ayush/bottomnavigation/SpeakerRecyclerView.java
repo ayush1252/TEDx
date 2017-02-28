@@ -1,13 +1,18 @@
 package com.example.ayush.bottomnavigation;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -43,6 +48,22 @@ public class SpeakerRecyclerView extends AppCompatActivity {
         setContentView(R.layout.speaker_recycler_view);
         ActionBar actionBar=getSupportActionBar();
         actionBar.setTitle("Speakers");
+
+        if(!haveNetworkConnection())
+        {
+            AlertDialog.Builder builder= new AlertDialog.Builder(SpeakerRecyclerView.this);
+            builder.setTitle("Internet Connection Failure");
+            builder.setMessage("This part of application requires working internet connection.\n\nPlease " +
+                    "enable internet and try again.");
+            builder.setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    finish();
+                }
+            });
+            builder.create().show();
+
+        }
         final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         speakerslist=new ArrayList<SpeakerClass>();
         String url= String.valueOf(URI.create("http://api.tedxdtu.in/api/speakers"));
@@ -121,5 +142,22 @@ public class SpeakerRecyclerView extends AppCompatActivity {
        // cardView.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.web_banner));
 
 
+    }
+
+    private boolean haveNetworkConnection() {
+        boolean haveConnectedWifi = false;
+        boolean haveConnectedMobile = false;
+
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo[] netInfo = cm.getAllNetworkInfo();
+        for (NetworkInfo ni : netInfo) {
+            if (ni.getTypeName().equalsIgnoreCase("WIFI"))
+                if (ni.isConnected())
+                    haveConnectedWifi = true;
+            if (ni.getTypeName().equalsIgnoreCase("MOBILE"))
+                if (ni.isConnected())
+                    haveConnectedMobile = true;
+        }
+        return haveConnectedWifi || haveConnectedMobile;
     }
 }

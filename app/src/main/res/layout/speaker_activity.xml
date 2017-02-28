@@ -101,6 +101,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/t1"
+        android:fontFamily="serif"
+        android:textSize="14dp"
+        android:text="@string/lorem"
         android:layout_margin="20dp"
         />
 

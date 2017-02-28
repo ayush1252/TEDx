@@ -55,7 +55,8 @@ public class SpeakersAdapter extends RecyclerView.Adapter<SpeakersAdapter.MyView
        String url= sm.getBg_img();
         Picasso.with(context)
                 .load(url)
-                .error(R.drawable.demobanner)
+                .placeholder(R.drawable.progress_animation)
+                .error(R.drawable.progress_animation)//Yahan Pe Image Not found ayega
                 .into(holder.abc);
 
     }

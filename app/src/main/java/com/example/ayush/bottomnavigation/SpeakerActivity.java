@@ -22,6 +22,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ayush.bottomnavigation.NetworkServices.WebViewC;
+import com.squareup.picasso.Picasso;
 
 public class SpeakerActivity extends AppCompatActivity {
     private static final int PERCENTAGE_TO_ANIMATE_AVATAR = 20;
@@ -35,6 +36,9 @@ public class SpeakerActivity extends AppCompatActivity {
     FloatingActionButton fab3;
     TextView t;
     CoordinatorLayout rootLayout;
+    String name,desc,shortd,cover,prof,facebook,twitter,linked;
+    TextView namet,desct,shortdesc;
+    ImageView coverimage,profileimage;
 
     private boolean FAB_Status = false;
 
@@ -50,6 +54,42 @@ public class SpeakerActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.speaker_activity);
+
+        Intent i=getIntent();
+        name=i.getStringExtra("name");
+        desc=i.getStringExtra("desc");
+        shortd=i.getStringExtra("short");
+        cover=i.getStringExtra("cover");
+        prof=i.getStringExtra("profile");
+        facebook=i.getStringExtra("facebook");
+        twitter=i.getStringExtra("twitter");
+        linked=i.getStringExtra("linked");
+
+        coverimage= (ImageView) findViewById(R.id.materialup_profile_backdrop);
+        profileimage= (ImageView) findViewById(R.id.materialup_profile_image);
+
+
+        namet= (TextView) findViewById(R.id.name);
+        desct= (TextView) findViewById(R.id.t1);
+        shortdesc= (TextView) findViewById(R.id.shortd);
+        Picasso.with(this)
+                .load(cover)
+                .placeholder(R.drawable.progress_animator2)
+                .error(R.drawable.progress_animation)
+                .into(coverimage);
+
+        Picasso.with(this)
+                .load(prof)
+                .placeholder(R.drawable.progress_animation)
+                .error(R.drawable.progress_animation)
+                .into(profileimage);
+
+        namet.setText(name);
+        desct.setText(desc);
+        shortdesc.setText(shortd);
+
+
+
 
 
 
@@ -103,7 +143,6 @@ public class SpeakerActivity extends AppCompatActivity {
         });
         mMaxScrollSize = appbarLayout.getTotalScrollRange();
 
-        t.setText(R.string.lorem);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -126,6 +165,7 @@ public class SpeakerActivity extends AppCompatActivity {
                 //Toast.makeText(getApplication(), "Floating Action Button 1", Toast.LENGTH_SHORT).show();
                 Intent intent=new Intent();
                 intent.setClass(SpeakerActivity.this, WebViewC.class);
+                intent.putExtra("url",facebook);
                 startActivity(intent);
             }
         });
@@ -136,6 +176,7 @@ public class SpeakerActivity extends AppCompatActivity {
                 //Toast.makeText(getApplication(), "Floating Action Button 2", Toast.LENGTH_SHORT).show();
                 Intent intent=new Intent();
                 intent.setClass(SpeakerActivity.this, WebViewC.class);
+                intent.putExtra("url",twitter);
                 startActivity(intent);
             }
         });
@@ -143,9 +184,10 @@ public class SpeakerActivity extends AppCompatActivity {
         fab3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // Toast.makeText(getApplication(), "Floating Action Button 3", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplication(), "Floating Action Button 3", Toast.LENGTH_SHORT).show();
                 Intent intent=new Intent();
                 intent.setClass(SpeakerActivity.this, WebViewC.class);
+                intent.putExtra("url",linked);
                 startActivity(intent);
             }
         });

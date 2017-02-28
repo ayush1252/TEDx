@@ -100,8 +100,16 @@ public class SpeakerRecyclerView extends AppCompatActivity {
 
         recyclerView.addOnItemTouchListener(new RecyclerItemClickListener(this, new RecyclerItemClickListener.OnItemClickListener() {
             @Override
-            public void onItemClick(View view, int position) {
+            public void onItemClick(View view, int i) {
                 Intent intent=new Intent(SpeakerRecyclerView.this,SpeakerActivity.class);
+                intent.putExtra("cover",speakerslist.get(i).getCover_img());
+                intent.putExtra("profile",speakerslist.get(i).getProfile_img());
+                intent.putExtra("name",speakerslist.get(i).getName());
+                intent.putExtra("desc",speakerslist.get(i).getDescription());
+                intent.putExtra("short",speakerslist.get(i).getShort_desc());
+                intent.putExtra("facebook",speakerslist.get(i).getFacebook());
+                intent.putExtra("twitter",speakerslist.get(i).getTwitter());
+                intent.putExtra("linked",speakerslist.get(i).getLinkedin());
                 startActivity(intent);
             }
         }));

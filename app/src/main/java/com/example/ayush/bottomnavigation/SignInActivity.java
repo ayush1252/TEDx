@@ -143,8 +143,9 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
                 });
 
         Intent i=new Intent(SignInActivity.this,MainActivity.class);
-        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        //i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(i);
+        finish();
     }
 
     @Override

@@ -37,6 +37,7 @@ public class Profile extends AppCompatActivity {
     CircleImageView profileimage;
 
 
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -109,7 +110,7 @@ public class Profile extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_VIEW,
-                        Uri.parse("http://maps.google.com/maps?saddr=20.344,34.34&daddr=20.5666,45.345"));
+                        Uri.parse("http://maps.google.com/maps?saddr=28.720844,77.107121&daddr=28.750075,77.117665"));
                 startActivity(intent);
             }
         });

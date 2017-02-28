@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
         mDemoSlider = (SliderLayout)findViewById(R.id.slider);
         DefaultSliderView defaultSliderView=new DefaultSliderView(this);
-        defaultSliderView.image(R.drawable.bebe);
+        defaultSliderView.image(R.drawable.pic2);
         mDemoSlider.addSlider(defaultSliderView);
         mDemoSlider.addSlider(defaultSliderView);
         mDemoSlider.addSlider(defaultSliderView);

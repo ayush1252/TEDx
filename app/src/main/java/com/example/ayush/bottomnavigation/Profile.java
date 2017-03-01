@@ -175,7 +175,7 @@ public class Profile extends AppCompatActivity {
         });
         SharedPreferences sharedPreferences1 = getSharedPreferences(getString(R.string.MainInfo),MODE_PRIVATE);
         status = sharedPreferences1.getString(getString(R.string.Status), getString(R.string.unregistered));
-        Toast.makeText(this, status, Toast.LENGTH_SHORT).show();
+       // Toast.makeText(this, status, Toast.LENGTH_SHORT).show();
         if(status.equals("unregistered")){
             statustext.setText("Unregistered");
         }

@@ -11,6 +11,11 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -27,6 +32,7 @@ import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.DefaultSliderView;
 import com.daimajia.slider.library.Tricks.ViewPagerEx;
 import com.example.ayush.bottomnavigation.NetworkServices.VolleySingleton;
+import com.example.ayush.bottomnavigation.NetworkServices.WebViewC;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.crash.FirebaseCrash;
@@ -46,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        FirebaseCrash.report(new Exception("My first Android non-fatal error"));
 
         mDemoSlider = (SliderLayout)findViewById(R.id.slider);
 
@@ -155,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
                         JsonObjectRequest newjsonObjectRequest=new JsonObjectRequest(Request.Method.GET, url2, null, new Response.Listener<JSONObject>() {
                             @Override
                             public void onResponse(JSONObject response) {
-                                Toast.makeText(MainActivity.this, "LALALAL\n"+response.toString(), Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(MainActivity.this, "LALALAL\n"+response.toString(), Toast.LENGTH_SHORT).show();
                                 if(response.has("error"))
                                 {
 
@@ -175,7 +180,7 @@ public class MainActivity extends AppCompatActivity {
                         }, new Response.ErrorListener() {
                             @Override
                             public void onErrorResponse(VolleyError error) {
-                                Toast.makeText(MainActivity.this, "LALALAL\n"+error.toString(), Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(MainActivity.this, "LALALAL\n"+error.toString(), Toast.LENGTH_SHORT).show();
                             }
                         }){
                             @Override
@@ -199,7 +204,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
 
-                Toast.makeText(MainActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MainActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -209,6 +214,28 @@ public class MainActivity extends AppCompatActivity {
         String state=sharedprefrence.getString(getString(R.string.Status),getString(R.string.unregistered));
         String token=sharedprefrence.getString(getString(R.string.Token),"");
         Log.d("TAG",state+token);
+        if(state.equals(getString(R.string.unregistered)))
+        {
+            final AlertDialog.Builder builder=new AlertDialog.Builder(MainActivity.this);
+            LayoutInflater inflater = getLayoutInflater();
+            View dialogView = inflater.inflate(R.layout.alert_register, null);
+            builder.setView(dialogView);
+            builder.setPositiveButton("Take me there", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                    startActivity(new Intent(MainActivity.this,Profile.class));
+                }
+            });
+            builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.cancel();
+                }
+            });
+            AlertDialog alert= builder.create();
+            alert.show();
+        }
 
     }
 
@@ -216,6 +243,90 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         bottomNavigation.setCurrentItem(1);
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        final AlertDialog.Builder builder=new AlertDialog.Builder(MainActivity.this);
+        LayoutInflater inflater = getLayoutInflater();
+        View dialogView = inflater.inflate(R.layout.alert_connect, null);
+        RelativeLayout Web,Face,Twit,Insta,Link,Snap;
+        Web= (RelativeLayout) dialogView.findViewById(R.id.Web);
+        Face= (RelativeLayout) dialogView.findViewById(R.id.Fac);
+        Twit= (RelativeLayout) dialogView.findViewById(R.id.Twit);
+        Insta= (RelativeLayout) dialogView.findViewById(R.id.Inst);
+        Link= (RelativeLayout) dialogView.findViewById(R.id.Link);
+        Snap= (RelativeLayout) dialogView.findViewById(R.id.Snap);
+        Web.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent();
+                intent.setClass(MainActivity.this, WebViewC.class);
+                intent.putExtra("url","http://tedxdtu.in/");
+                startActivity(intent);
+            }
+        });
+
+        Face.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent();
+                intent.setClass(MainActivity.this, WebViewC.class);
+                intent.putExtra("url","https://www.facebook.com/tedxdtu/?fref=ts");
+                startActivity(intent);
+            }
+        });
+
+        Twit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent();
+                intent.setClass(MainActivity.this, WebViewC.class);
+                intent.putExtra("url","https://twitter.com/tedxdtuofficial");
+                startActivity(intent);
+            }
+        });
+
+        Insta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent();
+                intent.setClass(MainActivity.this, WebViewC.class);
+                intent.putExtra("url","https://www.instagram.com/tedxdtu/");
+                startActivity(intent);
+            }
+        });
+
+        Link.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent();
+                intent.setClass(MainActivity.this, WebViewC.class);
+                intent.putExtra("url","https://www.linkedin.com/company/tedxdtu");
+                startActivity(intent);
+            }
+        });
+
+        Snap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("*/*");
+                intent.setPackage("com.snapchat.android");
+                startActivity(Intent.createChooser(intent, "Open Snapchat"));
+            }
+        });
+        builder.setView(dialogView);
+        AlertDialog alert= builder.create();
+        alert.show();
+        return  true;
 
     }
 

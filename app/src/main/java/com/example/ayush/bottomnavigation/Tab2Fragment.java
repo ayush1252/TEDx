@@ -42,7 +42,6 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
-import retrofit2.http.POST;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -402,11 +401,11 @@ public class Tab2Fragment extends android.support.v4.app.Fragment implements Ada
                                                     editor.putString(getString(R.string.Status),getString(R.string.unregistered));
                                                     editor.putString(getString(R.string.Token)," ");
                                                     editor.commit();
-                                                    Toast.makeText(getActivity(), "ABAB"+response.toString(), Toast.LENGTH_SHORT).show();
+                                                    //Toast.makeText(getActivity(), "ABAB"+response.toString(), Toast.LENGTH_SHORT).show();
                                                 }
                                                 else
                                                 {
-                                                    Toast.makeText(getActivity(), response.toString(), Toast.LENGTH_SHORT).show();
+                                                    //Toast.makeText(getActivity(), response.toString(), Toast.LENGTH_SHORT).show();
                                                     String token="";
                                                     try {
                                                         token=response.getString("token");
@@ -424,7 +423,7 @@ public class Tab2Fragment extends android.support.v4.app.Fragment implements Ada
                                                         JsonObjectRequest newjsonObjectRequest=new JsonObjectRequest(Request.Method.GET, url2, null, new Response.Listener<JSONObject>() {
                                                             @Override
                                                             public void onResponse(JSONObject response) {
-                                                                Toast.makeText(getActivity(), "LALALAL\n"+response.toString(), Toast.LENGTH_SHORT).show();
+                                                               // Toast.makeText(getActivity(), "LALALAL\n"+response.toString(), Toast.LENGTH_SHORT).show();
                                                                 if(response.has("error"))
                                                                 {
 
@@ -444,7 +443,7 @@ public class Tab2Fragment extends android.support.v4.app.Fragment implements Ada
                                                         }, new Response.ErrorListener() {
                                                             @Override
                                                             public void onErrorResponse(VolleyError error) {
-                                                                Toast.makeText(getActivity(), "LALALAL\n"+error.toString(), Toast.LENGTH_SHORT).show();
+                                                                //Toast.makeText(getActivity(), "LALALAL\n"+error.toString(), Toast.LENGTH_SHORT).show();
                                                             }
                                                         }){
                                                             @Override
@@ -468,7 +467,7 @@ public class Tab2Fragment extends android.support.v4.app.Fragment implements Ada
                                             @Override
                                             public void onErrorResponse(VolleyError error) {
 
-                                                Toast.makeText(getActivity(), error.toString(), Toast.LENGTH_SHORT).show();
+                                               // Toast.makeText(getActivity(), error.toString(), Toast.LENGTH_SHORT).show();
 
                                             }
                                         });
@@ -481,7 +480,7 @@ public class Tab2Fragment extends android.support.v4.app.Fragment implements Ada
 
 
                         } catch (JSONException e) {
-                            Toast.makeText(getActivity(), e.toString(), Toast.LENGTH_LONG).show();
+                            //Toast.makeText(getActivity(), e.toString(), Toast.LENGTH_LONG).show();
                             Log.d("TAG",e.toString());
                             Log.d("TAG", String.valueOf(e.getStackTrace()));
                         }

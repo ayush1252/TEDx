@@ -111,8 +111,8 @@ public class SpeakerRecyclerView extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Log.d("LA12","ERROR YES");
-                Toast.makeText(SpeakerRecyclerView.this, "ABCDED", Toast.LENGTH_SHORT).show();
-                Toast.makeText(SpeakerRecyclerView.this, error.toString(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(SpeakerRecyclerView.this, "ABCDED", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(SpeakerRecyclerView.this, error.toString(), Toast.LENGTH_SHORT).show();
 
             }
         });

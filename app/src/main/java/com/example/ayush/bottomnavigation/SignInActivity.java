@@ -110,19 +110,19 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
     private void firebaseAuthWithGoogle(GoogleSignInAccount acct){
         Log.d("lalala","Sucess");
         String authCode = acct.getServerAuthCode();
-        Toast.makeText(this, "Auth Code: " + authCode, Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, acct.getEmail()+acct.getDisplayName(), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "Auth Code: " + authCode, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, acct.getEmail()+acct.getDisplayName(), Toast.LENGTH_SHORT).show();
         SharedPreferences sharedPreferences=getSharedPreferences("Login",MODE_PRIVATE);
         SharedPreferences.Editor editor=sharedPreferences.edit();
         if(sharedPreferences.getInt("log",0)==0)
         {
             FirebaseMessaging.getInstance().subscribeToTopic("Unregistered");
-            Toast.makeText(this, "Subscribed", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "Subscribed", Toast.LENGTH_SHORT).show();
         }
         editor.putInt("log",1);
       // String str= GoogleAuthUtil.getToken(getApplicationContext(),acct.getGivenName(), GoogleSignInOptions.DEFAULT_SIGN_IN)
         editor.putString("token",acct.getId());
-        Toast.makeText(this, acct.getId()+"TOKEN", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, acct.getId()+"TOKEN", Toast.LENGTH_SHORT).show();
         editor.putString("username",acct.getEmail());
         editor.commit();
 

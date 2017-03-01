@@ -56,7 +56,7 @@ public class SpeakersAdapter extends RecyclerView.Adapter<SpeakersAdapter.MyView
         Picasso.with(context)
                 .load(url)
                 .placeholder(R.drawable.progress_animation)
-                .error(R.drawable.progress_animation)//Yahan Pe Image Not found ayega
+                .error(R.drawable.cantload)//Yahan Pe Image Not found ayega
                 .into(holder.abc);
 
     }

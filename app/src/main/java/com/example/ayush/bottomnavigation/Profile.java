@@ -142,7 +142,7 @@ public class Profile extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 EmailIntentBuilder.from(Profile.this)
-                        .to("support@tedxdtu.in")
+                        .to("contact@tedxdtu.in")
                         .subject("Support TEDxDTU")
                         .start();
 

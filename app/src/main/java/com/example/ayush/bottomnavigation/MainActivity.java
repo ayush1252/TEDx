@@ -55,21 +55,37 @@ public class MainActivity extends AppCompatActivity {
 
         mDemoSlider = (SliderLayout)findViewById(R.id.slider);
 
-        DefaultSliderView defaultSliderView1=new DefaultSliderView(this);
-        defaultSliderView1.image(R.drawable.image1min);
-        mDemoSlider.addSlider(defaultSliderView1);
+        DefaultSliderView defaultSliderView0=new DefaultSliderView(this);
+        defaultSliderView0.image(R.drawable.thatsfinal);
+        mDemoSlider.addSlider(defaultSliderView0);
+//
+//        DefaultSliderView defaultSliderView1=new DefaultSliderView(this);
+//        defaultSliderView1.image(R.drawable.thats1);
+//        mDemoSlider.addSlider(defaultSliderView1);
 
         DefaultSliderView defaultSliderView2=new DefaultSliderView(this);
-        defaultSliderView2.image(R.drawable.image2min);
+        defaultSliderView2.image(R.drawable.thats2);
         mDemoSlider.addSlider(defaultSliderView2);
 
         DefaultSliderView defaultSliderView3=new DefaultSliderView(this);
-        defaultSliderView3.image(R.drawable.image3min);
+        defaultSliderView3.image(R.drawable.thats3);
         mDemoSlider.addSlider(defaultSliderView3);
 
         DefaultSliderView defaultSliderView4=new DefaultSliderView(this);
-        defaultSliderView4.image(R.drawable.ibag);
+        defaultSliderView4.image(R.drawable.thats4);
         mDemoSlider.addSlider(defaultSliderView4);
+
+        DefaultSliderView defaultSliderView6=new DefaultSliderView(this);
+        defaultSliderView6.image(R.drawable.thats6);
+        mDemoSlider.addSlider(defaultSliderView6);
+
+        DefaultSliderView defaultSliderView5=new DefaultSliderView(this);
+        defaultSliderView5.image(R.drawable.thats5);
+        mDemoSlider.addSlider(defaultSliderView5);
+
+        DefaultSliderView defaultSliderView7=new DefaultSliderView(this);
+        defaultSliderView7.image(R.drawable.thats7);
+        mDemoSlider.addSlider(defaultSliderView7);
 
         mDemoSlider.setPresetTransformer(SliderLayout.Transformer.Accordion);
         //mDemoSlider.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);

@@ -274,85 +274,88 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu,menu);
+        getMenuInflater().inflate(R.menu.about_theme,menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        final AlertDialog.Builder builder=new AlertDialog.Builder(MainActivity.this);
-        LayoutInflater inflater = getLayoutInflater();
-        View dialogView = inflater.inflate(R.layout.alert_connect, null);
-        RelativeLayout Web,Face,Twit,Insta,Link,Snap;
-        Web= (RelativeLayout) dialogView.findViewById(R.id.Web);
-        Face= (RelativeLayout) dialogView.findViewById(R.id.Fac);
-        Twit= (RelativeLayout) dialogView.findViewById(R.id.Twit);
-        Insta= (RelativeLayout) dialogView.findViewById(R.id.Inst);
-        Link= (RelativeLayout) dialogView.findViewById(R.id.Link);
-        Snap= (RelativeLayout) dialogView.findViewById(R.id.Snap);
-        Web.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent();
-                intent.setClass(MainActivity.this, WebViewC.class);
-                intent.putExtra("url","http://tedxdtu.in/");
-                startActivity(intent);
-            }
-        });
+//        final AlertDialog.Builder builder=new AlertDialog.Builder(MainActivity.this);
+//        LayoutInflater inflater = getLayoutInflater();
+//        View dialogView = inflater.inflate(R.layout.alert_connect, null);
+//        RelativeLayout Web,Face,Twit,Insta,Link,Snap;
+//        Web= (RelativeLayout) dialogView.findViewById(R.id.Web);
+//        Face= (RelativeLayout) dialogView.findViewById(R.id.Fac);
+//        Twit= (RelativeLayout) dialogView.findViewById(R.id.Twit);
+//        Insta= (RelativeLayout) dialogView.findViewById(R.id.Inst);
+//        Link= (RelativeLayout) dialogView.findViewById(R.id.Link);
+//        Snap= (RelativeLayout) dialogView.findViewById(R.id.Snap);
+//        Web.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent=new Intent();
+//                intent.setClass(MainActivity.this, WebViewC.class);
+//                intent.putExtra("url","http://tedxdtu.in/");
+//                startActivity(intent);
+//            }
+//        });
+//
+//        Face.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent=new Intent();
+//                intent.setClass(MainActivity.this, WebViewC.class);
+//                intent.putExtra("url","https://www.facebook.com/tedxdtu");
+//                startActivity(intent);
+//            }
+//        });
+//
+//        Twit.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent=new Intent();
+//                intent.setClass(MainActivity.this, WebViewC.class);
+//                intent.putExtra("url","https://twitter.com/tedxdtuofficial");
+//                startActivity(intent);
+//            }
+//        });
+//
+//        Insta.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent=new Intent();
+//                intent.setClass(MainActivity.this, WebViewC.class);
+//                intent.putExtra("url","https://www.instagram.com/tedxdtu/");
+//                startActivity(intent);
+//            }
+//        });
+//
+//        Link.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent=new Intent();
+//                intent.setClass(MainActivity.this, WebViewC.class);
+//                intent.putExtra("url","https://www.linkedin.com/company/tedxdtu");
+//                startActivity(intent);
+//            }
+//        });
+//
+//        Snap.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(Intent.ACTION_SEND);
+//                intent.setType("*/*");
+//                intent.setPackage("com.snapchat.android");
+//                startActivity(Intent.createChooser(intent, "Open Snapchat"));
+//            }
+//        });
+//        builder.setView(dialogView);
+//        AlertDialog alert= builder.create();
+//        alert.show();
+        startActivity(new Intent(MainActivity.this,AboutTheTheme.class));
+      return  true;
 
-        Face.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent();
-                intent.setClass(MainActivity.this, WebViewC.class);
-                intent.putExtra("url","https://www.facebook.com/tedxdtu");
-                startActivity(intent);
-            }
-        });
 
-        Twit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent();
-                intent.setClass(MainActivity.this, WebViewC.class);
-                intent.putExtra("url","https://twitter.com/tedxdtuofficial");
-                startActivity(intent);
-            }
-        });
-
-        Insta.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent();
-                intent.setClass(MainActivity.this, WebViewC.class);
-                intent.putExtra("url","https://www.instagram.com/tedxdtu/");
-                startActivity(intent);
-            }
-        });
-
-        Link.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent();
-                intent.setClass(MainActivity.this, WebViewC.class);
-                intent.putExtra("url","https://www.linkedin.com/company/tedxdtu");
-                startActivity(intent);
-            }
-        });
-
-        Snap.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_SEND);
-                intent.setType("*/*");
-                intent.setPackage("com.snapchat.android");
-                startActivity(Intent.createChooser(intent, "Open Snapchat"));
-            }
-        });
-        builder.setView(dialogView);
-        AlertDialog alert= builder.create();
-        alert.show();
-        return  true;
 
     }
 

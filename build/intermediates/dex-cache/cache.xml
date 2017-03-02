@@ -66,6 +66,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/exploded-aar/com.victor/lib/1.0.4/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="8b534207608aa1c205263d7426e634872ae34f08">
+        <dex dex="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/pre-dexed/debug/com.victor-lib-1.0.4_5ff320967c35287ce2baade1dfa87c413118ee09.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/home/ayush/AndroidStudioProjects/Project-T/app/build/intermediates/exploded-aar/com.google.firebase/firebase-messaging/9.2.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"

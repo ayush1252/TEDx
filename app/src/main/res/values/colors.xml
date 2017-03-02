@@ -8,6 +8,7 @@
     <color name="navigationBarColor">#000000</color>
     <color name="colorAccent1">#c8e8ff</color>
     <color name="tabcolor">#3B494C</color>
+    <color name="lala">#c3000000</color>
 
     <color name="fbutton_color_turquoise">#1abc9c</color>
     <color name="fbutton_color_green_sea">#16a085</color>
@@ -29,4 +30,5 @@
     <color name="fbutton_color_silver">#bdc3c7</color>
     <color name="fbutton_color_concrete">#95a5a6</color>
     <color name="fbutton_color_asbestos">#7f8c8d</color>
+    <color name="semiTransparentWhite">#40FFFFFF</color>
 </resources>

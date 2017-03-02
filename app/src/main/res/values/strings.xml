@@ -22,6 +22,8 @@
 		AppInfo
 	</string>
 
+	<string name="about">abcd</string>
+
 	<string name="Token">
 		api_token
 	</string>

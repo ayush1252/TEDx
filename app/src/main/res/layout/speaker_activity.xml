@@ -104,6 +104,7 @@
         android:fontFamily="serif"
         android:textColor="@color/colorAccent"
         android:textSize="14dp"
+        android:textAlignment="viewStart"
         android:text="@string/lorem"
         android:layout_margin="20dp"
         />

@@ -26,6 +26,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.example.ayush.bottomnavigation.NetworkServices.VolleySingleton;
+import com.victor.loading.newton.NewtonCradleLoading;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -46,6 +47,7 @@ public class SpeakerRecyclerView extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.speaker_recycler_view);
+
         ActionBar actionBar=getSupportActionBar();
         actionBar.setTitle("Speakers");
 
@@ -93,6 +95,7 @@ public class SpeakerRecyclerView extends AppCompatActivity {
                         speakerslist.add(newspeaker);
 
                     }
+
                 } catch (JSONException e) {
                     Log.d("LA12","Exception YES");
 
@@ -105,6 +108,7 @@ public class SpeakerRecyclerView extends AppCompatActivity {
                 recyclerView.setLayoutManager(sLayoutManager);
                 recyclerView.setItemAnimator(new DefaultItemAnimator());
                 recyclerView.setAdapter(sAdapter);
+
 
             }
         }, new Response.ErrorListener() {

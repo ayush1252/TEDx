@@ -81,21 +81,31 @@ public class MainActivity extends AppCompatActivity {
 
         bottomNavigation = (AHBottomNavigation) findViewById(R.id.bottom_navigation);
         AHBottomNavigationItem item1 = new AHBottomNavigationItem("Speakers", R.drawable.speaker, R.color.colorAccent);
-        AHBottomNavigationItem item2 = new AHBottomNavigationItem("Home", R.drawable.home, R.color.colorPrimary);
-        AHBottomNavigationItem item3 = new AHBottomNavigationItem("Profile", R.drawable.profile, R.color.colorPrimaryDark);
+        AHBottomNavigationItem item2 = new AHBottomNavigationItem("Home", R.drawable.home, R.color.colorAccent);
+        AHBottomNavigationItem item3 = new AHBottomNavigationItem("Profile", R.drawable.profile, R.color.colorAccent);
 
         bottomNavigation.addItem(item1);
         bottomNavigation.addItem(item2);
         bottomNavigation.addItem(item3);
 
-        bottomNavigation.setDefaultBackgroundColor(getResources().getColor(R.color.colorPrimary));
-        bottomNavigation.setAccentColor(getResources().getColor(R.color.colorPrimary));
-        bottomNavigation.setInactiveColor(getResources().getColor(R.color.colorBottomNavigationActiveColored));
-
-        bottomNavigation.setForceTint(true);
-        bottomNavigation.setTitleState(AHBottomNavigation.TitleState.SHOW_WHEN_ACTIVE);
+        bottomNavigation.setDefaultBackgroundColor(Color.parseColor("#000000"));
+        bottomNavigation.setBehaviorTranslationEnabled(false);
         bottomNavigation.setCurrentItem(1);
+        bottomNavigation.setTitleState(AHBottomNavigation.TitleState.SHOW_WHEN_ACTIVE);
+        //bottomNavigation.setForceTint(true);
         bottomNavigation.setColored(true);
+        bottomNavigation.setTranslucentNavigationEnabled(false);
+        bottomNavigation.setInactiveColor(Color.parseColor("#FFFFFF"));
+        bottomNavigation.setAccentColor(Color.parseColor("#f1c40f"));
+
+//        bottomNavigation.setDefaultBackgroundColor(getResources().getColor(R.color.colorPrimary));
+//        bottomNavigation.setAccentColor(getResources().getColor(R.color.colorPrimary));
+//        bottomNavigation.setInactiveColor(getResources().getColor(R.color.colorBottomNavigationActiveColored));
+//
+//        bottomNavigation.setForceTint(true);
+//        bottomNavigation.setTitleState(AHBottomNavigation.TitleState.SHOW_WHEN_ACTIVE);
+//        bottomNavigation.setCurrentItem(1);
+//        bottomNavigation.setColored(true);
 
       bottomNavigation.setOnTabSelectedListener(new AHBottomNavigation.OnTabSelectedListener() {
           @Override

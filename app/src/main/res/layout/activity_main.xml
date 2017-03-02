@@ -33,7 +33,7 @@
             android:id="@+id/button2"
             android:padding="15dp"
             android:textColor="@color/windowBackground"
-            android:text="Venue: Dr.B.R. Ambedkar Auditorium, DTU"
+            android:text="Venue: Dr. B.R. Ambedkar Auditorium, DTU"
             android:layout_marginBottom="58dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true" />

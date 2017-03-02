@@ -75,7 +75,7 @@ public class SpeakerActivity extends AppCompatActivity {
         Picasso.with(this)
                 .load(cover)
                 .placeholder(R.drawable.progress_animator2)
-                .error(R.drawable.progress_animation)
+                .error(R.drawable.cantload)
                 .into(coverimage);
 
         Picasso.with(this)

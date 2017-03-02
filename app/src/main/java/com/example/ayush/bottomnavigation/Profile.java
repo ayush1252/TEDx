@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -51,6 +52,10 @@ public class Profile extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile);
+
+        ActionBar actionBar=getSupportActionBar();
+        actionBar.setTitle("TEDxDTU");
+
         button = (Button)findViewById(R.id.button);
         statustext = (TextView)findViewById(R.id.status);
         FirebaseUser user = firebaseAuth.getInstance().getCurrentUser();

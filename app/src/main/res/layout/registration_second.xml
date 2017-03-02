@@ -49,7 +49,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Adress"
+                android:hint="Address"
                 android:layout_marginTop="10dp"
                 android:drawableLeft="@drawable/locality"
                 android:id="@+id/Adress"
@@ -60,7 +60,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/Adress"
-                android:hint="Loacality"
+                android:hint="Locality"
                 android:id="@+id/locality"
                 android:layout_marginTop="10dp"
                 android:drawableLeft="@drawable/local"

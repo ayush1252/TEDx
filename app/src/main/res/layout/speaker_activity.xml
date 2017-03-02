@@ -102,6 +102,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/t1"
         android:fontFamily="serif"
+        android:textColor="@color/colorAccent"
         android:textSize="14dp"
         android:text="@string/lorem"
         android:layout_margin="20dp"

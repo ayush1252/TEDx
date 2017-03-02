@@ -199,6 +199,7 @@ public class TabFragment extends android.support.v4.app.Fragment implements com.
 
     @Override
     public void onDateSet(com.wdullaer.materialdatetimepicker.date.DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
+        monthOfYear=monthOfYear+1;
         String str=""+dayOfMonth+"."+monthOfYear+"."+year;
         DOB.setText(str);
     }

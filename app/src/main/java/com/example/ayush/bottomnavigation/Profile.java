@@ -8,17 +8,23 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.AppBarLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.ayush.bottomnavigation.NetworkServices.WebViewC;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.zxing.BarcodeFormat;
@@ -52,10 +58,19 @@ public class Profile extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile);
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar);
+        myToolbar.setTitle("TEDxDTU");
+        myToolbar.setTitleTextColor(getResources().getColor(R.color.windowBackground));
+        myToolbar.setSubtitleTextColor(getResources().getColor(R.color.windowBackground));
+        setSupportActionBar(myToolbar);
 
-        ActionBar actionBar=getSupportActionBar();
-        actionBar.setTitle("TEDxDTU");
+        // Get a support ActionBar corresponding to this toolbar
+        ActionBar ab = getSupportActionBar();
 
+        // Enable the Up button
+        ab.setDisplayHomeAsUpEnabled(true);
+        ab.setHomeAsUpIndicator(R.drawable.abc_ic_ab_back_mtrl_am_alpha);
+        setSupportActionBar(myToolbar);
         button = (Button)findViewById(R.id.button);
         statustext = (TextView)findViewById(R.id.status);
         FirebaseUser user = firebaseAuth.getInstance().getCurrentUser();
@@ -237,6 +252,94 @@ public class Profile extends AppCompatActivity {
 
 
 
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId()==R.id.total) {
+            final AlertDialog.Builder builder = new AlertDialog.Builder(Profile.this);
+            LayoutInflater inflater = getLayoutInflater();
+            View dialogView = inflater.inflate(R.layout.alert_connect, null);
+            RelativeLayout Web, Face, Twit, Insta, Link, Snap;
+            Web = (RelativeLayout) dialogView.findViewById(R.id.Web);
+            Face = (RelativeLayout) dialogView.findViewById(R.id.Fac);
+            Twit = (RelativeLayout) dialogView.findViewById(R.id.Twit);
+            Insta = (RelativeLayout) dialogView.findViewById(R.id.Inst);
+            Link = (RelativeLayout) dialogView.findViewById(R.id.Link);
+            Snap = (RelativeLayout) dialogView.findViewById(R.id.Snap);
+            Web.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent();
+                    intent.setClass(Profile.this, WebViewC.class);
+                    intent.putExtra("url", "http://tedxdtu.in/");
+                    startActivity(intent);
+                }
+            });
+
+            Face.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent();
+                    intent.setClass(Profile.this, WebViewC.class);
+                    intent.putExtra("url", "https://www.facebook.com/tedxdtu");
+                    startActivity(intent);
+                }
+            });
+
+            Twit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent();
+                    intent.setClass(Profile.this, WebViewC.class);
+                    intent.putExtra("url", "https://twitter.com/tedxdtuofficial");
+                    startActivity(intent);
+                }
+            });
+
+            Insta.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent();
+                    intent.setClass(Profile.this, WebViewC.class);
+                    intent.putExtra("url", "https://www.instagram.com/tedxdtu/");
+                    startActivity(intent);
+                }
+            });
+
+            Link.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent();
+                    intent.setClass(Profile.this, WebViewC.class);
+                    intent.putExtra("url", "https://www.linkedin.com/company/tedxdtu");
+                    startActivity(intent);
+                }
+            });
+
+            Snap.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(Intent.ACTION_SEND);
+                    intent.setType("*/*");
+                    intent.setPackage("com.snapchat.android");
+                    startActivity(Intent.createChooser(intent, "Open Snapchat"));
+                }
+            });
+            builder.setView(dialogView);
+            builder.setCancelable(true);
+            AlertDialog alert = builder.create();
+            alert.show();
+            return true;
+        }
+        return false;
 
     }
 }

@@ -8,8 +8,21 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AppThemeNoAction" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:actionMenuTextColor">@color/windowBackground</item>
+    </style>
+
     <style name="ToolBarWithNavigationBack">
         <item name="navigationIcon">@drawable/abc_ic_ab_back_mtrl_am_alpha</item>
+
+    </style>
+    <style name="ToolBarWithNavigationBackNoAction">
+        <item name="android:actionMenuTextColor">@color/windowBackground</item>
+
     </style>
 
     <style name="MyMaterialTheme" parent="MyMaterialTheme.Base">

@@ -22,7 +22,9 @@
         <activity android:name=".SpeakerActivity"
             android:screenOrientation="portrait"/>
         <activity android:name=".Profile"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppThemeNoAction"/>
         <activity android:name=".MainActivity"
             android:screenOrientation="portrait"/>
         <activity android:name=".SpeakerRecyclerView"

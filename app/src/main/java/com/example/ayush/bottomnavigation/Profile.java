@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -50,6 +51,8 @@ public class Profile extends AppCompatActivity {
     TextView mailid,person,statustext;
     String status;
     Button button;
+    ImageView imageView;
+    TextView textView;
     CircleImageView profileimage;
 
 
@@ -63,6 +66,7 @@ public class Profile extends AppCompatActivity {
         myToolbar.setTitleTextColor(getResources().getColor(R.color.windowBackground));
         myToolbar.setSubtitleTextColor(getResources().getColor(R.color.windowBackground));
         setSupportActionBar(myToolbar);
+        Typeface typeface=Typeface.createFromAsset(getAssets(), "fonts/qi.otf");
 
         // Get a support ActionBar corresponding to this toolbar
         ActionBar ab = getSupportActionBar();
@@ -72,6 +76,10 @@ public class Profile extends AppCompatActivity {
         ab.setHomeAsUpIndicator(R.drawable.abc_ic_ab_back_mtrl_am_alpha);
         setSupportActionBar(myToolbar);
         button = (Button)findViewById(R.id.button);
+        textView= (TextView) findViewById(R.id.textview);
+        textView.setTypeface(typeface);
+        imageView= (ImageView) findViewById(R.id.imageview);
+
         statustext = (TextView)findViewById(R.id.status);
         FirebaseUser user = firebaseAuth.getInstance().getCurrentUser();
         profileimage= (CircleImageView) findViewById(R.id.profile_image);
@@ -93,24 +101,7 @@ public class Profile extends AppCompatActivity {
         person.setText(name);
 
         //Yeh wala part will go into when the user is successfully registered
-        String content="ABX12DES234";
-        QRCodeWriter writer = new QRCodeWriter();
-        try {
-            BitMatrix bitMatrix = writer.encode(content, BarcodeFormat.QR_CODE, 800, 512);
-            int width = bitMatrix.getWidth();
-            int height = bitMatrix.getHeight();
-            Bitmap bmp = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565);
-            for (int x = 0; x < width; x++) {
-                for (int y = 0; y < height; y++) {
-                    bmp.setPixel(x, y, bitMatrix.get(x, y) ? Color.BLACK : Color.WHITE);
-                }
-            }
-            ((ImageView) findViewById(R.id.imageview)).setImageBitmap(bmp);
 
-        } catch (WriterException e) {
-            ((TextView) findViewById(R.id.transactiontext)).setText("TRANSACTION ID:-"+content);
-            e.printStackTrace();
-        }
         //Yahan se yahan tak
         phone= (ImageView)findViewById(R.id.telimage);
         phone.setOnClickListener(new View.OnClickListener() {
@@ -198,21 +189,53 @@ public class Profile extends AppCompatActivity {
        // Toast.makeText(this, status, Toast.LENGTH_SHORT).show();
         if(status.equals("unregistered")){
             statustext.setText("Unregistered");
+            button.setText("Registration Form");
+            imageView.setVisibility(View.INVISIBLE);
+            textView.setVisibility(View.INVISIBLE);
         }
         else if(status.equals("registered")){
             statustext.setText("Awaiting Response");
-
+            button.setVisibility(View.INVISIBLE);
+            imageView.setVisibility(View.INVISIBLE);
+            textView.setText("We are currently reviewing your application form and you will be notified once your form is accepted." +
+                    "\n\nFor further queries , feel free to contact us.");
 
         }
 
         else if(status.equals("make_payment")){
-            statustext.setText("Make Payment");
-
+            statustext.setText("Application Accepted");
+            button.setVisibility(View.VISIBLE);
+            textView.setVisibility(View.VISIBLE);
+            textView.setText("Click on the Button below to go to the payment portal.\n\nFill the Email-Id column with the Email-Id with which you've registered.");
+            imageView.setVisibility(View.INVISIBLE);
+            button.setText("Make Payment");
 
         }
-
+//Yeh wala status kya hoga pata karna hai
         else if(status.equals("registered")){
-            statustext.setText("Successfully Registered");
+            statustext.setText("Successfully Registered  ");
+            button.setVisibility(View.INVISIBLE);
+            textView.setVisibility(View.INVISIBLE);
+
+            //Yeh jo content hai yeh fetch karna hai
+            String content="ABX12DES234";
+            QRCodeWriter writer = new QRCodeWriter();
+            try {
+                BitMatrix bitMatrix = writer.encode(content, BarcodeFormat.QR_CODE, 800, 512);
+                int width = bitMatrix.getWidth();
+                int height = bitMatrix.getHeight();
+                Bitmap bmp = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565);
+                for (int x = 0; x < width; x++) {
+                    for (int y = 0; y < height; y++) {
+                        bmp.setPixel(x, y, bitMatrix.get(x, y) ? Color.BLACK : Color.WHITE);
+                    }
+                }
+                imageView.setImageBitmap(bmp);
+
+            } catch (WriterException e) {
+                ((TextView) findViewById(R.id.transactiontext)).setText("TRANSACTION ID:-"+content);
+                e.printStackTrace();
+            }
 
 
         }
@@ -223,25 +246,23 @@ public class Profile extends AppCompatActivity {
                 if(status.equals("unregistered")){
                     Intent i = new Intent(getApplicationContext(),RegistrationActivity.class);
                     startActivity(i);
+                    finish();
                 }
-                else if(status.equals("waiting")){
-                    button.setText("Awaiting Response");
-                    Intent i = new Intent(getApplicationContext(),Profile.class);
-                    startActivity(i);
+                else if(status.equals("registered")){
+                    //Registered pe koi button nahi hai
 
                 }
 
                 else if(status.equals("make_payment")){
-                    button.setText("Payment Portal");
-                    Intent i = new Intent(getApplicationContext(),Profile.class);
-                    startActivity(i);
-
+                    Intent intent=new Intent();
+                    intent.setClass(Profile.this, WebViewC.class);
+                    intent.putExtra("url","https://in.explara.com/e/tedxdtu-2017");
+                    startActivity(intent);
                 }
-
+                //yeh wala status kya hoga pata karna hai
                 else if(status.equals("registered")){
-                    button.setText("Successfully Registered");
-                    Intent i = new Intent(getApplicationContext(),Profile.class);
-                    startActivity(i);
+
+                    //Registered pe koi button nahi hoga
 
                 }
             }

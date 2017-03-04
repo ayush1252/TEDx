@@ -10,6 +10,7 @@
     android:weightSum="1">
 <ScrollView
     android:layout_width="match_parent"
+    android:scrollbars="none"
     android:layout_height="match_parent">
     <RelativeLayout
         android:layout_width="match_parent"
@@ -81,14 +82,18 @@
         android:drawablePadding="10dp" />
 
         <android.support.design.widget.FloatingActionButton
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/next"
+            android:layout_width="wrap_content"
+            android:elevation="8dp"
             android:id="@+id/next"
-            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom|right|end"
+            android:src="@drawable/next"
             android:layout_below="@+id/DOB"
-            android:layout_alignParentEnd="true"
-            android:layout_weight="0.25" />
+            android:layout_alignEnd="@+id/DOB"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            />
+
 
 
     </RelativeLayout>

@@ -11,6 +11,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
+        android:scrollbars="none"
         android:layout_height="match_parent">
 
         <RelativeLayout
@@ -119,15 +120,18 @@
                 android:layout_below="@+id/Attend"
                 android:drawablePadding="10dp"/>
             <android.support.design.widget.FloatingActionButton
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:elevation="8dp"
+                android:id="@+id/finish"
+                android:layout_gravity="bottom|right|end"
                 android:src="@drawable/finish"
                 android:layout_below="@+id/Ideas"
-                android:id="@+id/finish"
-                android:background="@color/colorAccent"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentEnd="true"
-                android:layout_weight="0.25" />
+                android:layout_alignEnd="@+id/Ideas"
+                android:layout_margin="10dp"
+                android:clickable="true"
+                />
+
         </RelativeLayout>
     </ScrollView>
 

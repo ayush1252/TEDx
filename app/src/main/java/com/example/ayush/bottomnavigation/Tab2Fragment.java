@@ -201,7 +201,7 @@ public class Tab2Fragment extends android.support.v4.app.Fragment implements Ada
                 else
                     RegistrationActivity.registrationform.setAttend(attend.getText().toString());
 
-                Toast.makeText(getActivity(), "FINISH", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getActivity(), "FINISH", Toast.LENGTH_SHORT).show();
 
                 JSONObject jsonObject=RegistrationActivity.registrationform.toJSON();
 

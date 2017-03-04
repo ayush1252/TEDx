@@ -206,7 +206,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/imageview"
-                android:layout_above="@+id/button"/>
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/textview"
+                android:layout_marginTop="20dp"
+                android:textAlignment="center"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorAccent"/>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -1,6 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'MyAndroidKey'
+            keyPassword 'Ayush@12'
+            storeFile file('/home/ayush/Documents/android.jks')
+            storePassword 'ayush12521198'
+        }
+    }
     compileSdkVersion 24
     buildToolsVersion "24.0.2"
     defaultConfig {
@@ -12,19 +20,21 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }
-    dexOptions{
+    dexOptions {
         javaMaxHeapSize "4g"
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            debuggable true
+            signingConfig signingConfigs.config
         }
     }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
@@ -42,7 +52,7 @@ dependencies {
     compile 'com.google.firebase:firebase-messaging:9.2.0'
     compile 'com.android.support:support-v4:24.2.1'
     compile 'com.wdullaer:materialdatetimepicker:3.1.1'
-    compile "com.android.support:support-v4:+"
+    compile 'com.android.support:support-v4:+'
     compile 'com.nineoldandroids:library:2.4.0'
     compile 'com.squareup.picasso:picasso:2.3.2'
     compile 'com.daimajia.slider:library:1.1.5@aar'
@@ -52,13 +62,10 @@ dependencies {
     compile 'com.android.volley:volley:1.0.0'
     compile 'de.cketti.mailto:email-intent-builder:1.0.0'
     compile 'com.google.android.gms:play-services-appindexing:9.2.0'
-    compile "com.squareup.picasso:picasso:2.4.0"
+    compile 'com.squareup.picasso:picasso:2.4.0'
     compile 'com.google.zxing:core:3.2.1'
     compile 'com.android.support:multidex:1.0.1'
     compile 'com.victor:lib:1.0.4'
-
-
-
 }
 
 apply plugin: 'com.google.gms.google-services'

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.ayush.bottomnavigation">
+    package="com.app.ayush.tedxdtu">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -8,10 +8,11 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:debuggable="false"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".SignInActivity"
+            android:name="com.app.ayush.tedxdtu.SignInActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,21 +21,21 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SpeakerActivity"
+            android:name="com.app.ayush.tedxdtu.SpeakerActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Profile"
-            android:parentActivityName=".MainActivity"
+            android:name="com.app.ayush.tedxdtu.Profile"
+            android:parentActivityName="com.app.ayush.tedxdtu.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeNoAction" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.app.ayush.tedxdtu.MainActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SpeakerRecyclerView"
+            android:name="com.app.ayush.tedxdtu.SpeakerRecyclerView"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".RegistrationActivity"
+            android:name="com.app.ayush.tedxdtu.RegistrationActivity"
             android:screenOrientation="portrait"
             android:theme="@style/MyMaterialTheme"
             android:windowSoftInputMode="stateHidden" />
@@ -46,21 +47,21 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <service android:name=".MyFirebaseInstanceIDService">
+        <service android:name="com.app.ayush.tedxdtu.MyFirebaseInstanceIDService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
-        <service android:name=".MyFirebaseMessagingService">
+        <service android:name="com.app.ayush.tedxdtu.MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
 
-        <activity android:name=".NetworkServices.WebViewC" />
-        <activity android:name=".AboutTheTheme"
+        <activity android:name="com.app.ayush.tedxdtu.NetworkServices.WebViewC" />
+        <activity android:name="com.app.ayush.tedxdtu.AboutTheTheme"
             android:theme="@style/AppThemeNoAction"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="com.app.ayush.tedxdtu.MainActivity"
             android:screenOrientation="portrait"></activity>
     </application>
 

@@ -6,7 +6,7 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.ayush.bottomnavigation.MainActivity">
+    tools:context="com.app.ayush.tedxdtu.MainActivity">
 
     <com.daimajia.slider.library.SliderLayout
         android:id="@+id/slider"

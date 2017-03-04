@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/regnow"
+        android:padding="10dp"
+        android:src="@drawable/canpay"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/regnow"
+        android:text="Your Application has been accepted"
+        android:textSize="15dp"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:id="@+id/text1"
+        android:textStyle="bold"
+        android:layout_marginTop="0dp"
+        android:fontFamily="serif"
+        android:layout_marginBottom="4dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text1"
+        android:fontFamily="serif"
+        android:padding="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textSize="13dp"
+        android:textAlignment="center"
+        android:text="Visit the Profile section of the application to make payment and secure a seat to attend TEDxDTU 2017"/>
+
+
+</RelativeLayout>

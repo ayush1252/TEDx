@@ -5,5 +5,11 @@
         android:id="@+id/total"
         app:showAsAction = "always"/>
 
+    <item android:title="Partners"
+        android:id="@+id/partner"
+        app:showAsAction = "ifRoom"/>
+
+
+
 
 </menu>

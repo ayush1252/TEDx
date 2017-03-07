@@ -101,6 +101,54 @@
           "status": 2
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:234423609707:android:c0f06efb24ddc9ff",
+        "android_client_info": {
+          "package_name": "com.app.tedxdtu.tedxdtu17"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "234423609707-ursqb4ub902cashsf76qf20129movmu7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.tedxdtu.tedxdtu17",
+            "certificate_hash": "09c9f83486432f4d8b0fe2d8357d0ee636c7e376"
+          }
+        },
+        {
+          "client_id": "234423609707-f877df63jf3vrssgiju6sple33uijv0t.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "234423609707-5150b1k2nffotuh7cofijgsqkmjsh3s2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbwr2Bm9JYTE_dlVUl5b1I6CNItXZrPRk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "234423609707-f877df63jf3vrssgiju6sple33uijv0t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
     }
   ],
   "configuration_version": "1"

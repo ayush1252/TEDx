@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/windowBackground"
-    tools:context="com.app.ayush.tedxdtu.AboutTheTheme">
+    tools:context="com.app.tedxdtu.tedxdtu17.AboutTheTheme">
     <RelativeLayout
         android:id="@+id/background"
         android:layout_width="match_parent"

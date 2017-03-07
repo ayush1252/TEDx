@@ -5,7 +5,7 @@
     android:id="@+id/activity_check"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.app.ayush.tedxdtu.RegistrationActivity">
+    tools:context="com.app.tedxdtu.tedxdtu17.RegistrationActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -29,7 +29,7 @@
             app:tabSelectedTextColor="@color/randomcolor"
             app:tabGravity="fill"/>
 </android.support.design.widget.AppBarLayout>
-<com.app.ayush.tedxdtu.CustomViewPager
+<com.app.tedxdtu.tedxdtu17.CustomViewPager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

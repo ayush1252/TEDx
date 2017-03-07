@@ -12,7 +12,7 @@ android {
     compileSdkVersion 24
     buildToolsVersion "24.0.2"
     defaultConfig {
-        applicationId "com.app.ayush.tedxdtu"
+        applicationId "com.app.tedxdtu.tedxdtu17"
         minSdkVersion 19
         targetSdkVersion 24
         versionCode 1
